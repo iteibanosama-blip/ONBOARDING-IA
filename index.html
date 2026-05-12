@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>VH · Sistema de Conversión</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #0A0908; color: #E8DFC9; font-family: 'Inter', system-ui, sans-serif; line-height: 1.5; min-height: 100vh; }
+.display-font { font-family: 'Cormorant Garamond', serif; letter-spacing: -0.01em; }
+.gold { color: #C9A961; }
+.muted { color: #8A8170; }
+.soft { color: #A89F88; }
+button { font-family: inherit; cursor: pointer; }
+
+/* HEADER */
+header { border-bottom: 1px solid #2A2620; padding: 1.5rem 1rem; background: rgba(10,9,8,0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 50; }
+.header-inner { max-width: 900px; margin: 0 auto; }
+.tag { font-size: 0.65rem; color: #C9A961; letter-spacing: 0.3em; margin-bottom: 0.25rem; font-weight: 500; }
+.hero-title { font-size: 2.5rem; font-weight: 500; color: #F5F1E8; line-height: 1; }
+.subtitle { font-size: 0.8rem; color: #8A8170; margin-top: 0.5rem; }
+
+/* CONTROLS */
+.controls { margin-top: 1.5rem; }
+.control-label { font-size: 0.7rem; color: #8A8170; letter-spacing: 0.15em; margin-bottom: 0.5rem; text-transform: uppercase; }
+.toggle-group { display: flex; gap: 0.5rem; }
+.toggle-btn { background: #14110F; border: 1px solid #2A2620; color: #8A8170; padding: 0.6rem 1.2rem; border-radius: 0.4rem; font-size: 0.85rem; flex: 1; max-width: 200px; transition: all 0.2s; font-weight: 500; }
+.toggle-btn.active { background: linear-gradient(135deg, #C9A961 0%, #A88B47 100%); color: #0A0908; border-color: #C9A961; }
+.utility-row { margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+.util-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.9rem; border-radius: 0.4rem; font-size: 0.75rem; background: #14110F; border: 1px solid #2A2620; color: #8A8170; transition: all 0.2s; }
+.util-btn.active { background: linear-gradient(135deg, #C9A961 0%, #A88B47 100%); color: #0A0908; border-color: #C9A961; }
+.search-wrap { flex: 1; min-width: 180px; max-width: 300px; position: relative; }
+.search-wrap input { width: 100%; padding: 0.5rem 0.9rem 0.5rem 2rem; background: #14110F; border: 1px solid #2A2620; border-radius: 0.4rem; color: #E8DFC9; font-size: 0.8rem; outline: none; font-family: 'Inter', sans-serif; }
+.search-icon { position: absolute; left: 0.7rem; top: 50%; transform: translateY(-50%); color: #8A8170; pointer-events: none; }
+
+/* MAIN */
+main { max-width: 900px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+.banner { padding: 1rem 1.25rem; background: linear-gradient(135deg, rgba(201,169,97,0.08) 0%, transparent 100%); border: 1px solid rgba(201,169,97,0.2); border-radius: 0.5rem; margin-bottom: 1.5rem; }
+.banner-title { font-size: 1.2rem; color: #F5F1E8; margin-bottom: 0.3rem; }
+.banner-sub { font-size: 0.85rem; color: #A89F88; }
+
+/* SECTIONS */
+.section { background: #14110F; border: 1px solid #2A2620; border-radius: 0.5rem; overflow: hidden; transition: all 0.3s; margin-bottom: 0.75rem; }
+.section.open { border-color: #C9A961; }
+.section-header { width: 100%; padding: 1.1rem 1.25rem; background: transparent; border: none; display: flex; align-items: center; gap: 1rem; color: #E8DFC9; text-align: left; }
+.section-icon { color: #8A8170; transition: color 0.2s; font-size: 1.2rem; flex-shrink: 0; }
+.section.open .section-icon { color: #C9A961; }
+.section-meta { flex: 1; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; color: #E8DFC9; }
+.section.open .section-title { color: #F5F1E8; }
+.section-subtitle { font-size: 0.75rem; color: #8A8170; margin-top: 0.15rem; }
+.chevron { color: #8A8170; transition: all 0.3s; font-size: 1rem; flex-shrink: 0; }
+.section.open .chevron { color: #C9A961; transform: rotate(180deg); }
+.section-body { padding: 0 1.25rem 1.5rem; display: none; }
+.section.open .section-body { display: block; animation: slideDown 0.3s ease-out; }
+.accent-line { background: linear-gradient(90deg, #C9A961 0%, transparent 100%); height: 1px; margin-bottom: 1.25rem; }
+
+/* SUBSECTIONS */
+.subsection { margin-bottom: 0.75rem; background: #0F0D0B; border-radius: 0.4rem; border: 1px solid #1F1B16; overflow: hidden; }
+.subsection-header { width: 100%; padding: 0.85rem 1rem; background: transparent; border: none; display: flex; align-items: center; justify-content: space-between; color: #E8DFC9; text-align: left; }
+.subsection-title { font-size: 0.92rem; font-weight: 500; color: #E8DFC9; }
+.subsection.open .subsection-title { color: #F5F1E8; }
+.subsection-subtitle { font-size: 0.72rem; color: #8A8170; margin-top: 0.15rem; }
+.subsection-body { padding: 0 1rem 1rem; display: none; }
+.subsection.open .subsection-body { display: block; animation: slideDown 0.3s ease-out; }
+
+/* PHRASE BOX */
+.phrase-box { background: #1A1714; border-left: 2px solid #C9A961; padding: 1rem 3rem 1rem 1rem; border-radius: 0.3rem; white-space: pre-wrap; color: #F0E8D4; position: relative; line-height: 1.7; font-size: 0.95rem; margin-bottom: 0.4rem; }
+.copy-btn { position: absolute; top: 0.75rem; right: 0.75rem; background: rgba(201,169,97,0.1); border: 1px solid rgba(201,169,97,0.3); color: #C9A961; padding: 0.35rem 0.5rem; border-radius: 0.25rem; font-size: 0.7rem; display: inline-flex; align-items: center; gap: 0.25rem; transition: all 0.2s; }
+.copy-btn:hover { background: rgba(201,169,97,0.2); }
+.copy-btn.copied { background: rgba(80,140,80,0.2); border-color: rgba(80,140,80,0.5); color: #88B888; }
+.case-label { font-size: 0.7rem; color: #C9A961; letter-spacing: 0.1em; margin-bottom: 0.4rem; margin-top: 1rem; text-transform: uppercase; font-weight: 600; }
+.note { font-size: 0.78rem; color: #A89F88; margin-top: 0.6rem; line-height: 1.5; }
+
+/* INFO BOXES */
+.info-box { padding: 0.85rem 1rem; border-radius: 0.4rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.5; }
+.info-gold { background: rgba(201,169,97,0.05); border: 1px solid rgba(201,169,97,0.15); color: #D4CCB5; }
+.info-red { background: rgba(192,60,60,0.08); border: 1px solid rgba(192,60,60,0.25); color: #E8DFC9; }
+
+/* CHECKLIST */
+.checklist-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem; border-radius: 0.3rem; transition: background 0.2s; cursor: pointer; }
+.checklist-item:hover { background: rgba(201,169,97,0.05); }
+.checkbox { width: 1.25rem; height: 1.25rem; border: 1.5px solid #4A3F2A; border-radius: 0.25rem; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+.checkbox.checked { background: #C9A961; border-color: #C9A961; color: #0A0908; }
+.checklist-item.done .checklist-text { color: #8A8170; text-decoration: line-through; }
+.checklist-text { font-size: 0.88rem; color: #E8DFC9; }
+
+/* RULES */
+.rule { display: flex; align-items: flex-start; gap: 0.85rem; padding: 0.75rem 0.85rem; background: #1A1714; border-radius: 0.35rem; border: 1px solid #2A2620; margin-bottom: 0.6rem; }
+.number-circle { display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; border-radius: 50%; background: rgba(201,169,97,0.1); border: 1px solid #C9A961; color: #C9A961; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 0.9rem; flex-shrink: 0; }
+.rule-text { font-size: 0.86rem; color: #E8DFC9; line-height: 1.5; padding-top: 0.15rem; }
+
+/* METRICS */
+.metrics-table { background: #1A1714; border-radius: 0.4rem; overflow: hidden; border: 1px solid #2A2620; }
+.metric-row { display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 1rem; border-bottom: 1px solid #2A2620; }
+.metric-row:last-child { border-bottom: none; }
+.metric-label { font-size: 0.85rem; color: #D4CCB5; }
+.metric-value { font-family: 'Cormorant Garamond', serif; color: #C9A961; font-size: 1.2rem; font-weight: 600; }
+
+/* MENTALITY */
+.mentality-quote { padding: 1.5rem; background: linear-gradient(135deg, rgba(201,169,97,0.08) 0%, transparent 100%); border: 1px solid rgba(201,169,97,0.2); border-radius: 0.5rem; margin-bottom: 1.25rem; }
+.mentality-text { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: #F5F1E8; line-height: 1.3; margin-bottom: 0.5rem; }
+.mentality-attr { font-size: 0.8rem; color: #8A8170; margin-top: 0.75rem; }
+.thought { padding: 0.85rem 1rem; background: #1A1714; border-left: 2px solid #C9A961; margin-bottom: 0.6rem; font-size: 0.88rem; color: #E8DFC9; line-height: 1.5; font-style: italic; border-radius: 0 0.3rem 0.3rem 0; }
+
+/* GUIDES */
+.guide-item { padding: 0.75rem 1rem; background: #1A1714; border-radius: 0.3rem; border-left: 2px solid #C9A961; font-size: 0.88rem; color: #E8DFC9; margin-bottom: 0.5rem; }
+
+/* FOOTER */
+footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #2A2620; text-align: center; font-size: 0.75rem; color: #5A5247; }
+footer .tag-line { margin-bottom: 0.5rem; letter-spacing: 0.2em; }
+
+@keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 640px) { .hero-title { font-size: 2rem !important; } }
+
+/* CALL MODE: hide everything except essential sections */
+body.call-mode .non-essential { display: none; }
+body.call-mode .banner { display: none; }
+</style>
+</head>
+<body data-mode="reserva">
+
+<header>
+  <div class="header-inner">
+    <div class="tag">LANZAMIENTO VÍCTOR HERAS</div>
+    <h1 class="display-font hero-title">Sistema de <span class="gold">Conversión</span></h1>
+    <div class="subtitle">Reservas · Seguimientos · v3</div>
+
+    <div class="controls">
+      <div class="control-label">Estás trabajando con</div>
+      <div class="toggle-group">
+        <button class="toggle-btn active" data-mode="reserva" onclick="setMode('reserva')">RESERVA</button>
+        <button class="toggle-btn" data-mode="seguimiento" onclick="setMode('seguimiento')">SEGUIMIENTO</button>
+      </div>
+    </div>
+
+    <div class="utility-row">
+      <button class="util-btn" id="callModeBtn" onclick="toggleCallMode()">📞 Modo llamada</button>
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Buscar sección..." id="searchInput" oninput="filterSections()">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="banner non-essential">
+    <div class="display-font banner-title">La llamada NO se vende como llamada de venta.</div>
+    <div class="banner-sub">Se vende como <span class="gold" style="font-weight:600">ONBOARDING DE LA IA</span>. Esto es la columna del sistema.</div>
+  </div>
+
+  <div id="sections">
+
+    <!-- 1. PREPARACIÓN -->
+    <div class="section" data-search="preparacion antes llamar checklist">
+      <button class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">🎯</span>
+        <div class="section-meta">
+          <div class="section-title">01 · Preparación</div>
+          <div class="section-subtitle">10 min antes de llamar</div>
+        </div>
+        <span class="chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div class="accent-line"></div>
+        <p class="soft" style="font-size:0.85rem;line-height:1.6;">Sin esto vas ciego. El lead nota cuando le recuerdas. Marca cada punto:</p>
+        <div style="margin-top:1rem;">
+          <div class="checklist-item" onclick="toggleCheck(this)"><span class="checkbox">✓</span><span class="checklist-text">Revisar Fathom de la llamada original (últimos 5 min: cierre, objeciones, compromisos)</span></div>
+          <div class="checklist-item" onclick="toggleCheck(this)"><span class="checkbox">✓</span><span class="checklist-text">Notas: nicho, facturación, objetivo, dolor real, objeción principal</span></div>
+          <div class="checklist-item" onclick="toggleCheck(this)"><span class="checkbox">✓</span><span class="checklist-text">Identificar el track del lead (ver abajo)</span></div>
+          <div class="checklist-item" onclick="toggleCheck(this)"><span class="checkbox">✓</span><span class="checklist-text">Pregunta concreta lista para meter en la IA</span></div>
+          <div class="checklist-item" onclick="toggleCheck(this)"><span class="checkbox">✓</span><span class="checklist-text">Pestañas abiertas: IA + link pago + WhatsApp + ficha del lead</span></div>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <div class="case-label">Tracks de <span data-text="mode-label">RESERVA</span></div>
+          <div data-show="reserva">
+            <div class="guide-item">A — Timing ("entro más tarde")</div>
+            <div class="guide-item">B — Duda ("aseguro mientras pienso")</div>
+            <div class="guide-item">C — Dinero (pago fraccionado)</div>
+          </div>
+          <div data-show="seguimiento" style="display:none">
+            <div class="guide-item">T1 — Pensárselo</div>
+            <div class="guide-item">T2 — Casi cerró</div>
+            <div class="guide-item">T3 — Dinero</div>
+            <div class="guide-item">T4 — No encaje</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. MENSAJES -->
+    <div class="section" data-search="mensajes m1 m2 m3 m4 recordatorios no show whatsapp">
+      <button class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">💬</span>
+        <div class="section-meta">
+          <div class="section-title">02 · Mensajes</div>
+          <div class="section-subtitle">M1, M2, M3, M4 + No show</div>
+        </div>
+        <span class="chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div class="accent-line"></div>
+        <p class="soft" style="font-size:0.85rem;line-height:1.6;">Máximo 2 líneas. Cero saludo. Cero emojis. <span class="gold">NUNCA</span> revelar el regalo por escrito.</p>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">M1 — Primer mensaje</div><div class="subsection-subtitle">&lt;15 min desde asignación</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div data-show="reserva">
+              <div class="phrase-box" data-phrase>[Nombre] urgente, sobre tu reserva.
+Tengo algo para ti — dime cuándo tienes 2 min hoy y te llamo.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            </div>
+            <div data-show="seguimiento" style="display:none">
+              <div class="phrase-box" data-phrase>[Nombre] urgente, sobre lo que hablamos la otra vez.
+Tengo algo concreto para ti — dime cuándo tienes 2 min hoy.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            </div>
+            <div class="case-label">Variante (química alta en llamada original)</div>
+            <div class="phrase-box" data-phrase>Eh [Nombre], 2 min tuyos hoy. Es importante y es bueno. ¿Cuándo te llamo?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">M2 — Cuando responden</div><div class="subsection-subtitle">4 escenarios</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="case-label">Responde con hora</div>
+            <div class="phrase-box" data-phrase>Hecho, te marco a las [X]. Hazte 30 min y ten pantalla a mano, que te lo enseño en vivo.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="case-label">Pregunta qué es</div>
+            <div class="phrase-box" data-phrase>Te lo enseño en la llamada porque por chat pierde sentido. ¿A qué hora te pillo hoy?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="case-label">Dice "ahora puedo"</div>
+            <div class="phrase-box" data-phrase>Genial, te marco en 2 min. Ten pantalla a mano.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="note">⚠ Marca en 2 min exactos, no más</div>
+            <div class="case-label">Pide info por chat (precio, fechas, qué es)</div>
+            <div class="phrase-box" data-phrase>Eso es justo lo que quiero enseñarte por llamada, porque depende de tu caso. ¿Cuándo te llamo hoy?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">Recordatorios pre-llamada</div><div class="subsection-subtitle">Suben show rate de 60% a 85%</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="case-label">Llamada hoy (&gt;3h después) · 1h antes</div>
+            <div class="phrase-box" data-phrase>[Nombre], en 1h te marco. ¿Sigue bien?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="case-label">Llamada para mañana o más · La mañana del día</div>
+            <div class="phrase-box" data-phrase>[Nombre], confirmando que nos juntamos hoy a las [X]. Ten 30 min y pantalla.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">M3 — Silencio 12-24h sin agendar</div><div class="subsection-subtitle">Audio 15-20s</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="phrase-box" data-phrase>[Nombre], ¿te pillé liado? Lo que te quería mostrar tiene fecha, necesito coordinarte hoy o mañana sin falta para que lo aproveches. Dime hora y te marco.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">M4 — Silencio 24-36h más</div><div class="subsection-subtitle">Audio firme · último mensaje</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="phrase-box" data-phrase>[Nombre], último mensaje por aquí. Esto que te quiero dar lo estamos abriendo solo a los que ya tienen plaza, pero necesito tu respuesta hoy. Marca tú o te marco yo a las [X]. Si no es el momento, también me sirve saberlo.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="note">Sin respuesta tras M4 → nurturing.</div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">Protocolo No Show</div><div class="subsection-subtitle">Si agendamos y no aparece</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="case-label">T+5 min · Audio corto</div>
+            <div class="phrase-box" data-phrase>[Nombre], te estoy llamando y no contestas. ¿Te ha surgido algo? Marca tú o dime nueva hora.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="case-label">T+30 min · Texto presuposicional</div>
+            <div class="phrase-box" data-phrase>Imagino que te ha surgido algo. ¿Te va mejor mañana a las [X] o a las [Y]?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="note">24h sin respuesta → aplicar M4.<br>2 no shows seguidos → nurturing 30 días directo.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. LA LLAMADA -->
+    <div class="section" data-search="llamada fases apertura rapport marco onboarding demo cierre">
+      <button class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">📞</span>
+        <div class="section-meta">
+          <div class="section-title">03 · La Llamada</div>
+          <div class="section-subtitle">30 min · 8 fases</div>
+        </div>
+        <span class="chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div class="accent-line"></div>
+        <div class="info-box info-gold"><strong class="gold">30 min con margen 15.</strong> 8 fases hiladas. Cada fase con su frase puente.</div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">Fase 1 · Apertura + Rapport</div><div class="subsection-subtitle">30-45s</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="phrase-box" data-phrase>¡[Nombre]! ¿Cómo andas, máquina? Oye, tranquilo que esto NO es llamada de venta, ¿eh?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="note">Energía alta, broma, cara. Rompe el "viene a venderme".</div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">Fase 2 · Marco + El "Porqué"</div><div class="subsection-subtitle">30s</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="phrase-box" data-phrase>Te comento cómo vamos a llevar esta llamada: primero activamos tu IA, te haré una serie de preguntas para optimizarla, le metemos preguntas reales sobre tu negocio para que veas cómo funciona aplicado a ti, y al final del onboarding te explico cómo te queda todo configurado. ¿Va?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="case-label">El "porqué" — Reserva</div>
+            <div data-show="reserva">
+              <div class="phrase-box" data-phrase>Ya que pagaste tu reserva, te damos acceso previo a parte de lo que ya está pagado. Esto es el 1% del programa.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            </div>
+            <div data-show="seguimiento" style="display:none">
+              <div class="phrase-box" data-phrase>Viendo tu caso, que mostraste interés y que eres un perfil con potencial alto, te damos el 1% del programa para que veas cómo es por dentro una pequeña parte.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            </div>
+            <div class="note">El "al final te explico cómo queda configurado" instala anticipadamente el cierre.</div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">Fase 3 · Pregunta de apertura encubierta</div><div class="subsection-subtitle">30s</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="phrase-box" data-phrase>Una pregunta rápida antes de empezar a configurar: ¿ha cambiado algo en tu situación desde la última vez que hablamos? ¿Sigues igual o ha pasado algo?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="note">NO leer literal, adaptar a cada lead.<br>Si empeoró = dolor más fácil. Si igual = "justo por eso te llamo". Si mejoró = "perfecto, esto acelera lo tuyo".</div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">Fase 4 · Onboarding = Descubrimiento camuflado</div><div class="subsection-subtitle">4-5 min</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="phrase-box" data-phrase>Genial, pues vamos a darle. Comparto pantalla y vamos rellenando juntos.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="note">Cada pregunta del onboarding es descubrimiento:<br>· Nicho → "¿Sigues centrado en [X]?"<br>· Facturación → "¿Cómo lo llevas? ¿Lo del mes pasado?"<br>· Objetivo → "Recuerdo que querías llegar a [X], ¿sigue igual?"<br>· Bloqueos → "¿Qué te está costando más ahora?"</div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">Fase 5 · Demo aplicada</div><div class="subsection-subtitle">2-3 min</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="phrase-box" data-phrase>Vale, ya tenemos tu perfil cargado. Vamos a meterle la primera pregunta — y la vamos a aprovechar bien. ¿Qué es lo que más te está costando ahora mismo a nivel [contenido/captación/cierre]?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="note">⚠ SOLO 5 preguntas y 10 guiones. La primera se hace JUNTOS pensando en lo que más le ayude.</div>
+            <div class="case-label">Prompt para meter en la IA</div>
+            <div class="phrase-box" data-phrase>Tengo un negocio de [QUÉ VENDE]. Facturo [X €] al mes y llevo [TIEMPO] con esto. Mi objetivo a corto plazo es [OBJETIVO MEDIBLE].
+
+Ahora mismo el cuello de botella es [PROBLEMA CONCRETO]. He intentado [ACCIÓN 1] y [ACCIÓN 2], pero [RESULTADO REAL].
+
+Mi hipótesis es que [POR QUÉ CREO QUE PASA].
+
+¿Qué harías tú concretamente en mi situación para [RESULTADO DESEADO] en los próximos 60-90 días? Dame pasos accionables semana a semana.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">Fase 6 · Destapar objeción</div><div class="subsection-subtitle">1-2 min</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="phrase-box" data-phrase>Mira, mientras lo procesas, una cosa que me quedó con duda de la última vez. Cuando me dijiste [su objeción], normalmente eso es por una de tres cosas: el dinero, el momento, o que no terminas de ver el encaje. Siendo honestos, ¿cuál era la tuya?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="note">Validar → aislar → resolver volviendo al dolor.</div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">Fase 7 · Cierre "antes de colgar"</div><div class="subsection-subtitle">2-3 min</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="phrase-box" data-phrase>Vale, tiene sentido. Mira, antes de colgar — y esto es lo que te quería plantear...
+
+Te lo digo claro: esto que acabas de ver es el 1% de lo que está dentro. Te lo enseño así porque quiero que tú decidas con información, no a ciegas.
+
+Si lo dejamos hecho hoy, no solo se queda activada esta IA todo el tiempo del programa, sino que además entran:
+· 2 meses extra de acceso
+· Guía aplicada a tu nicho (las 10 estructuras virales que te muestro ahora)
+
+Si lo dejas para más adelante, sigue siendo el programa, pero estos extras ya no.
+
+¿Cómo lo ves?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="note">🔴 SILENCIO ABSOLUTO. Quien hable primero, pierde.</div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">Fase 8 · Pago o 2ª llamada</div><div class="subsection-subtitle">2-3 min</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="note">Ver sección "Cierre y Pago" para los 3 escenarios.<br>Pago se procesa EN la llamada. NO "te lo envío luego".</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. OBJECIÓN PRINCIPAL -->
+    <div class="section" data-search="objecion dejame probarlo capas">
+      <button class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">⚠️</span>
+        <div class="section-meta">
+          <div class="section-title">04 · Objeción Principal</div>
+          <div class="section-subtitle">"Déjame probarlo"</div>
+        </div>
+        <span class="chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div class="accent-line"></div>
+        <div class="info-box info-red"><strong style="color:#D67A7A">3 capas en orden.</strong> Si dice 3 veces que se lo lleva, PARAS y agendas 2ª llamada. No insistas en una cuarta.</div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">Capa 1 — Anclaje de autoridad</div><div class="subsection-subtitle">El recurso elegante</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="phrase-box" data-phrase>[Nombre], honesto contigo: si te lo llevas para probarlo solo, te vas a liar. Tienes 5 preguntas al cerebro de Víctor y 10 guiones — son limitados. La gente que lo prueba sola gasta los usos sin sacarles partido porque no sabe qué preguntar.
+
+Hagámoslas juntos aquí, que yo sé cómo funciona. Le metemos preguntas tuyas ahora, y vas viendo el valor real. ¿Te parece?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="note">Si acepta → metes 1-2 preguntas más, sale más wow, vuelves al cierre.</div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">Capa 2 — Si insiste</div><div class="subsection-subtitle">Honestidad radical</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="phrase-box" data-phrase>Vale. Mira, te voy honesto: nosotros queremos trabajar contigo, por eso te estamos dando esta prueba. Pero solo si tiene sentido para ti. Cuéntame qué es lo que falta exactamente — ¿es el dinero, es que necesitas verlo más en detalle, es otra cosa?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="note">Destapas la objeción real debajo del "déjame probarlo". Normalmente es dinero, miedo o duda.</div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">Capa 3 — Cebo de segunda llamada</div><div class="subsection-subtitle">Si no abre con las dos primeras</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="phrase-box" data-phrase>Vale, te respeto. Hagamos esto: mañana a las [X] nos juntamos otra vez. Para entonces tendrás probado lo que vimos, y yo te traigo otra cosa más que te quiero enseñar. ¿Te cuadra a las [X] o mejor a las [Y]?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="note">Agenda concreta. Cebo del "otra cosa más" mantiene loop.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. CIERRE Y PAGO -->
+    <div class="section" data-search="cierre pago dinero pareja escenarios">
+      <button class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">✨</span>
+        <div class="section-meta">
+          <div class="section-title">05 · Cierre y Pago</div>
+          <div class="section-subtitle">3 escenarios</div>
+        </div>
+        <span class="chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div class="accent-line"></div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">Si dice SÍ</div><div class="subsection-subtitle">Procesar pago en la llamada</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="phrase-box" data-phrase>Perfecto. Lo dejamos hecho ya en llamada para que no se cuele. ¿Cómo lo quieres hacer: full pay o fraccionado en [X] cuotas?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="note">· Abres link de pago en otra pestaña MIENTRAS hablas<br>· Pasas link por WhatsApp en directo<br>· Confirmas pago en directo<br>· NO cuelgas hasta procesado</div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">Si dice "es por dinero"</div><div class="subsection-subtitle">Aislar primero, ofrecer después</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="phrase-box" data-phrase>Vale. Cuéntame: ¿es que no encaja en absoluto ahora mismo, o es que no encaja pagarlo de golpe?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="note">· "No encaja en absoluto" → plan corto/medio/largo plazo<br>· "No puedo de golpe" → opciones de fraccionado</div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">Si dice "tengo que hablar con [pareja/equipo]"</div><div class="subsection-subtitle">Forzar la decisión</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="phrase-box" data-phrase>¿Y eso lo puedes hacer ahora mismo, en 5 min? Le escribes y vemos qué te dice. Porque si lo dejamos para otro día y otra llamada, ya sabes cómo va — pasa la semana y se nos enfría todo.
+
+Y otra cosa, si ya hablaste en su día, ¿qué más tienes que pensar? Imagino que ya has hablado con ellos durante todos estos días.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="note">Si dice que no puede ahora → cebo 2ª llamada con fecha específica.</div>
+          </div>
+        </div>
+
+        <div class="info-box info-gold" style="margin-top:1.5rem;">
+          <div class="display-font" style="font-size:1rem;color:#F5F1E8;margin-bottom:0.5rem;">Entregables al cerrar</div>
+          <div style="line-height:1.7;">
+            <strong class="gold">SI CIERRA HOY:</strong><br>
+            ✓ IA activada permanente · ✓ Guía aplicada al nicho (10 estructuras virales) · ✓ 2 meses extra
+          </div>
+          <div style="line-height:1.7;margin-top:0.75rem;">
+            <strong style="color:#D67A7A">SI NO CIERRA + 2ª LLAMADA:</strong><br>
+            Solo se mantiene la guía como excepción. Los 2 meses extra se pierden — "es tu última oportunidad".
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. POST-CIERRE -->
+    <div class="section" data-search="post cierre onboarding emocional reforzar">
+      <button class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">✓</span>
+        <div class="section-meta">
+          <div class="section-title">06 · Post-Cierre</div>
+          <div class="section-subtitle">Onboarding emocional</div>
+        </div>
+        <span class="chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div class="accent-line"></div>
+        <p class="soft" style="font-size:0.85rem;line-height:1.6;">Cuando dice sí y procesas el pago, <span class="gold">NO has terminado</span>. Hay que eliminar el buyer's remorse antes de que aparezca.</p>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">a) Reforzar decisión</div><div class="subsection-subtitle">En la misma llamada</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="phrase-box" data-phrase>Has tomado una buena decisión. Lo que viste hoy es solo el inicio.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">b) Traspaso cálido</div><div class="subsection-subtitle">Siguiente paso operativo</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="phrase-box" data-phrase>Ahora te mando por WhatsApp el acceso, los pasos para arrancar mañana y mi contacto directo. Cualquier cosa, me escribes.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">c) Eliminar último temor</div><div class="subsection-subtitle">Anti-buyer's remorse</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="phrase-box" data-phrase>Mucha gente en este punto siente la duda '¿habré hecho bien?'. Es normal. Dentro de 30 días me vas a decir 'menos mal que cerré ese día'.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">En las 24h siguientes</div><div class="subsection-subtitle">Mensaje de seguimiento</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="phrase-box" data-phrase>¿Cómo lo llevas? ¿Pudiste entrar al panel?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+            <div class="note">Mandar también: accesos + pasos + contacto directo del closer.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. MENTALIDAD -->
+    <div class="section" data-search="mentalidad desapego closer">
+      <button class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">🧠</span>
+        <div class="section-meta">
+          <div class="section-title">07 · Mentalidad</div>
+          <div class="section-subtitle">Full desapego</div>
+        </div>
+        <span class="chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div class="accent-line"></div>
+        <div class="mentality-quote">
+          <div class="mentality-text">"<span class="gold">Full desapego</span>. Te estoy regalando esto. Si quieres, bien. Si no, quédate con esto de prueba y disfrútalo."</div>
+          <div class="mentality-attr">— Iván</div>
+        </div>
+        <div class="case-label">Briefing mental · 30s antes de cada llamada</div>
+        <div class="thought">Te estoy regalando esto. Ya que te lo regalo, voy a reconducir a una venta. Si quiere bien, si no, que disfrute la prueba.</div>
+        <div class="thought">Tú mismo vas a ver el valor y tú mismo me vas a contactar dentro de dos días diciéndome que quieres entrar.</div>
+        <div class="thought">Yo no necesito cerrar esta venta. Si encaja, encaja.</div>
+        <div class="thought">Yo creo en el producto. He visto los resultados. Si esto le ayuda, le ayuda.</div>
+        <div class="thought">No voy a mendigar el cierre. Voy a presentar la opción y respetar la decisión.</div>
+        <div class="note" style="margin-top:1rem;font-style:italic;">Esto cambia el tono de voz sin que el closer sepa por qué. El prospecto lo siente. Conviction se transmite sin palabras.</div>
+      </div>
+    </div>
+
+    <!-- 8. REGLAS DURAS -->
+    <div class="section" data-search="reglas duras no negociables">
+      <button class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">📜</span>
+        <div class="section-meta">
+          <div class="section-title">08 · Reglas Duras</div>
+          <div class="section-subtitle">12 no negociables</div>
+        </div>
+        <span class="chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div class="accent-line"></div>
+        <div class="rule"><div class="number-circle">1</div><div class="rule-text">M1 en &lt;15 min desde asignación. No negociable.</div></div>
+        <div class="rule"><div class="number-circle">2</div><div class="rule-text">Audio en seguimiento, llamada como salida. Todo audio termina en "marca tú o te marco yo".</div></div>
+        <div class="rule"><div class="number-circle">3</div><div class="rule-text">La llamada se vende como ONBOARDING, no venta.</div></div>
+        <div class="rule"><div class="number-circle">4</div><div class="rule-text">"Esto no es llamada de venta" se respeta literal: sin pitch en los primeros 10 min.</div></div>
+        <div class="rule"><div class="number-circle">5</div><div class="rule-text">El cierre va en el "antes de colgar". Ni antes ni después.</div></div>
+        <div class="rule"><div class="number-circle">6</div><div class="rule-text">Tope de 2 llamadas. Tercer ghosting → "hasta aquí, te respeto" + nurturing 30 días.</div></div>
+        <div class="rule"><div class="number-circle">7</div><div class="rule-text">Stack del cierre solo si entra hoy.</div></div>
+        <div class="rule"><div class="number-circle">8</div><div class="rule-text">Pago se procesa en la llamada. NO "te lo envío luego".</div></div>
+        <div class="rule"><div class="number-circle">9</div><div class="rule-text">Mismo closer hace todo el seguimiento. Su reserva, su conversión.</div></div>
+        <div class="rule"><div class="number-circle">10</div><div class="rule-text">3 veces "déjame probarlo solo" → PARAS y agendas 2ª. No insistas en cuarta.</div></div>
+        <div class="rule"><div class="number-circle">11</div><div class="rule-text">NUNCA regalar la guía completa por chat.</div></div>
+        <div class="rule"><div class="number-circle">12</div><div class="rule-text">NUNCA decir "déjame consultarlo y te digo" en la llamada.</div></div>
+      </div>
+    </div>
+
+    <!-- 9. MÉTRICAS -->
+    <div class="section" data-search="metricas objetivos numeros conversion">
+      <button class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">📊</span>
+        <div class="section-meta">
+          <div class="section-title">09 · Métricas</div>
+          <div class="section-subtitle">Objetivos por closer</div>
+        </div>
+        <span class="chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div class="accent-line"></div>
+        <p class="soft" style="font-size:0.85rem;line-height:1.6;">Objetivos por closer y por semana. Sin medir, no se optimiza.</p>
+        <div class="metrics-table" style="margin-top:1rem;">
+          <div class="metric-row"><div class="metric-label">% Respuesta M1</div><div class="metric-value">60%</div></div>
+          <div class="metric-row"><div class="metric-label">% Agendación (responden → agendan)</div><div class="metric-value">60%</div></div>
+          <div class="metric-row"><div class="metric-label">Show rate (con recordatorios)</div><div class="metric-value">90%</div></div>
+          <div class="metric-row"><div class="metric-label">Cierre 1ª llamada — Reservas</div><div class="metric-value">50%</div></div>
+          <div class="metric-row"><div class="metric-label">Cierre 1ª llamada — Seguimientos</div><div class="metric-value">25%</div></div>
+          <div class="metric-row"><div class="metric-label">Cierre total — Reservas</div><div class="metric-value">70-80%</div></div>
+          <div class="metric-row"><div class="metric-label">Cierre total — Seguimientos</div><div class="metric-value">30-35%</div></div>
+        </div>
+        <div class="info-box info-gold" style="margin-top:1.5rem;">
+          <div class="display-font" style="font-size:1rem;color:#F5F1E8;margin-bottom:0.5rem;">Objetivo del lanzamiento</div>
+          <div style="line-height:1.7;">
+            <strong class="gold">30 Reservas</strong> × 50% cierre 1ª = ~15 ventas<br>
+            <strong class="gold">211 Seguimientos</strong> × 25% cierre 1ª = ~25 ventas<br><br>
+            <span class="soft">Total objetivo realista: 40-50 ventas en ciclo corto + nurturing.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. RECURSOS -->
+    <div class="section" data-search="recursos guias materiales cheat sheet">
+      <button class="section-header" onclick="toggleSection(this)">
+        <span class="section-icon">📚</span>
+        <div class="section-meta">
+          <div class="section-title">10 · Recursos</div>
+          <div class="section-subtitle">Guías y materiales</div>
+        </div>
+        <span class="chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div class="accent-line"></div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">Las 4 Guías por Nicho</div><div class="subsection-subtitle">Parte 2 del acceso anticipado</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div class="guide-item"><strong class="gold">1.</strong> Marketing</div>
+            <div class="guide-item"><strong class="gold">2.</strong> Dinero / Finanzas</div>
+            <div class="guide-item"><strong class="gold">3.</strong> Desarrollo personal (incluye fitness, salud, psico)</div>
+            <div class="guide-item"><strong class="gold">4.</strong> Negocios tradicionales</div>
+            <div class="note" style="margin-top:0.85rem;">Cada guía = 10 estructuras virales aplicadas. <span class="gold">NUNCA se entregan por chat.</span> Solo se muestran en pantalla y se entregan al cerrar.</div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <button class="subsection-header" onclick="toggleSub(this)">
+            <div><div class="subsection-title">Cheat Sheet operativa</div><div class="subsection-subtitle">Lo que el closer debe tener memorizado</div></div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="subsection-body">
+            <div style="display:flex;flex-direction:column;gap:0.4rem;font-size:0.85rem;color:#D4CCB5;">
+              <div>· Precios completos: full pay y todas las opciones de fraccionado</div>
+              <div>· Métodos de pago disponibles: Clarity Pay, Stripe, transferencia, Splitit</div>
+              <div>· Política de garantía (si la hay)</div>
+              <div>· Qué pasa con la reserva si entran: se descuenta de la primera cuota</div>
+              <div>· Bonus de acción rápida: 2 meses extra + condiciones</div>
+              <div>· Acceso al programa: cuándo empieza, módulos, soporte</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="tag-line">VH · FLOW CONVERSIÓN · v3</div>
+    <div style="font-size:0.7rem;">Para uso interno · Closers Sales Hacking</div>
+  </footer>
+</main>
+
+<script>
+// MODO RESERVA/SEGUIMIENTO
+function setMode(mode) {
+  document.body.dataset.mode = mode;
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.mode === mode);
+  });
+  document.querySelectorAll('[data-show]').forEach(el => {
+    el.style.display = el.dataset.show === mode ? '' : 'none';
+  });
+  document.querySelectorAll('[data-text="mode-label"]').forEach(el => {
+    el.textContent = mode.toUpperCase();
+  });
+  localStorage.setItem('vh-mode', mode);
+}
+
+// SECCIONES
+function toggleSection(btn) {
+  const section = btn.parentElement;
+  const wasOpen = section.classList.contains('open');
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('open'));
+  if (!wasOpen) section.classList.add('open');
+}
+
+// SUBSECCIONES
+function toggleSub(btn) {
+  const sub = btn.parentElement;
+  sub.classList.toggle('open');
+}
+
+// COPIAR
+function copyPhrase(btn) {
+  const phrase = btn.parentElement.cloneNode(true);
+  phrase.querySelector('.copy-btn').remove();
+  const text = phrase.textContent.trim();
+  navigator.clipboard.writeText(text).then(() => {
+    btn.classList.add('copied');
+    btn.innerHTML = '✓ Copiado';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = '📋 Copiar';
+    }, 1500);
+  });
+}
+
+// CHECKLIST
+function toggleCheck(item) {
+  item.classList.toggle('done');
+  const cb = item.querySelector('.checkbox');
+  cb.classList.toggle('checked');
+  cb.textContent = cb.classList.contains('checked') ? '✓' : '';
+  saveChecklist();
+}
+
+function saveChecklist() {
+  const state = {};
+  document.querySelectorAll('.checklist-item').forEach((item, i) => {
+    state[i] = item.classList.contains('done');
+  });
+  localStorage.setItem('vh-checklist', JSON.stringify(state));
+}
+
+function loadChecklist() {
+  try {
+    const state = JSON.parse(localStorage.getItem('vh-checklist') || '{}');
+    document.querySelectorAll('.checklist-item').forEach((item, i) => {
+      if (state[i]) {
+        item.classList.add('done');
+        const cb = item.querySelector('.checkbox');
+        cb.classList.add('checked');
+        cb.textContent = '✓';
+      }
+    });
+  } catch(e) {}
+}
+
+// MODO LLAMADA
+function toggleCallMode() {
+  document.body.classList.toggle('call-mode');
+  const btn = document.getElementById('callModeBtn');
+  if (document.body.classList.contains('call-mode')) {
+    btn.classList.add('active');
+    btn.textContent = '📞 Modo llamada ON';
+  } else {
+    btn.classList.remove('active');
+    btn.textContent = '📞 Modo llamada';
+  }
+}
+
+// BÚSQUEDA
+function filterSections() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  document.querySelectorAll('.section').forEach(s => {
+    const haystack = (s.dataset.search + ' ' + s.textContent).toLowerCase();
+    s.style.display = !q || haystack.includes(q) ? '' : 'none';
+  });
+}
+
+// Inicialización
+window.addEventListener('DOMContentLoaded', () => {
+  // Limpieza de buttons de copy fuera de phrase-box (artefacto del cloneNode)
+  document.querySelectorAll('.checkbox').forEach(cb => { if (!cb.classList.contains('checked')) cb.textContent = ''; });
+
+  // Restaurar modo
+  const savedMode = localStorage.getItem('vh-mode') || 'reserva';
+  setMode(savedMode);
+
+  // Restaurar checklist
+  loadChecklist();
+
+  // Abrir primera sección por defecto
+  const firstSection = document.querySelector('.section');
+  if (firstSection) firstSection.classList.add('open');
+});
+</script>
+
+</body>
+</html>

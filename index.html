@@ -185,42 +185,24 @@ main { padding-bottom: 5rem; }
     <div class="banner-sub">Se vende como <span class="gold" style="font-weight:600">ONBOARDING DE LA IA</span>. Esto es la columna del sistema.</div>
   </div>
 
-  <div id="sections"><div class="section" data-search="preparacion antes llamar checklist">
+  <div id="sections"><div class="section" data-search="preparacion antes llamar checklist fathom contexto pestañas pregunta ia">
   <button class="section-header" onclick="toggleSection(this)">
     <span class="section-icon">🎯</span>
     <div class="section-meta">
       <div class="section-title">01 · Preparación</div>
-      <div class="section-subtitle">10 min antes de llamar</div>
+      <div class="section-subtitle">5 min antes de la videollamada</div>
     </div>
     <span class="chevron">▼</span>
   </button>
   <div class="section-body">
     <div class="context-tag">CONTEXTO: <span data-context-label></span></div>
-    <p class="soft" style="font-size:0.85rem;line-height:1.6;">Sin esto vas ciego. El lead nota cuando le recuerdas. Marca cada punto:</p>
     <div style="margin-top:1rem;">
-  <div class="checklist-item" onclick="toggleCheck(this)"><span class="checkbox"></span><span class="checklist-text">Revisar Fathom de la llamada original (si la hubo)</span></div>
-  <div class="checklist-item" onclick="toggleCheck(this)"><span class="checkbox"></span><span class="checklist-text">Notas: nicho, facturación, objetivo, dolor real, objeción principal</span></div>
-  <div class="checklist-item" onclick="toggleCheck(this)"><span class="checkbox"></span><span class="checklist-text">Identificar el track del lead (si aplica)</span></div>
-  <div class="checklist-item" onclick="toggleCheck(this)"><span class="checkbox"></span><span class="checklist-text">Pregunta concreta lista para meter en la IA</span></div>
-  <div class="checklist-item" onclick="toggleCheck(this)"><span class="checkbox"></span><span class="checklist-text">Pestañas abiertas: IA + link pago + WhatsApp + ficha del lead</span></div>
+  <div class="checklist-item" onclick="toggleCheck(this)"><span class="checkbox"></span><span class="checklist-text">Revisar Fathom de la videollamada anterior (si la hubo)</span></div>
+  <div class="checklist-item" onclick="toggleCheck(this)"><span class="checkbox"></span><span class="checklist-text">Repasar el contexto del lead: nicho, facturación, objetivo, dolor, objeción previa</span></div>
+  <div class="checklist-item" onclick="toggleCheck(this)"><span class="checkbox"></span><span class="checklist-text">Páginas abiertas: panel admin IA Viralidad, link de pago, WhatsApp, ficha del lead</span></div>
+  <div class="checklist-item" onclick="toggleCheck(this)"><span class="checkbox"></span><span class="checklist-text">Pensar una pregunta concreta lista para meter en la IA cuando llegue la demo</span></div>
 </div>
-    <div data-context-show="reserva"><div style="margin-top:1.5rem;">
-  <div class="case-label">Tracks de Reserva</div>
-  <div class="guide-item">A — Timing ("entro más tarde")</div>
-  <div class="guide-item">B — Duda ("aseguro mientras pienso")</div>
-  <div class="guide-item">C — Dinero (pago fraccionado)</div>
-</div></div>
-    <div data-context-show="seguimiento"><div style="margin-top:1.5rem;">
-  <div class="case-label">Tracks de Seguimiento</div>
-  <div class="guide-item">T1 — Pensárselo</div>
-  <div class="guide-item">T2 — Casi cerró</div>
-  <div class="guide-item">T3 — Dinero</div>
-  <div class="guide-item">T4 — No encaje</div>
-</div></div>
-    <div data-context-show="closer-contacta,setter-agenda"><div style="margin-top:1.5rem;">
-  <div class="case-label">Tracks</div>
-  <div class="placeholder-box">No aplica para este contexto: el lead llega sin historial de llamada previa. Solo tenemos nombre, correo y teléfono — el contexto se construye en la propia llamada con preguntas rápidas al inicio.</div>
-</div></div>
+    <div data-context-show="closer-contacta,setter-agenda"><div class="note" style="margin-top:1rem;font-size:0.78rem;">Para reservas/seguimientos hay Fathom y contexto previo. Aquí el lead llega sin historial: solo nombre, correo y teléfono. El contexto se construye en la propia videollamada con las 5 preguntas del setup.</div></div>
   </div>
 </div><div class="section" data-search="antes llamada mensajes setter agendado prellamada m1 m2 m3 m4">
   <button class="section-header" onclick="toggleSection(this)">
@@ -238,19 +220,19 @@ main { padding-bottom: 5rem; }
         <div><div class="subsection-title">M1 · Primer mensaje</div><div class="subsection-subtitle"><15 min desde asignación</div></div>
         <span class="chevron">▼</span>
       </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>[Nombre], soy [X], hablamos el [día]. ¿Cuándo te pillo hoy 2 min? Es lo que te comenté que te pasaba.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Variante (química alta en llamada original)</div><div class="phrase-box" data-phrase>Ey [Nombre], 2 min tuyos hoy y te llamo. Lo que te dije que te traería.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
+      <div class="subsection-body"><div class="phrase-box" data-phrase>[Nombre], soy [X], hablamos el [día]. No es para presionarte ni nada, es que me dieron acceso a una herramienta nueva de Víctor y me gustaría regalarte 10 guiones virales y 5 consultas a su cerebro IA. ¿Cuándo te pillo hoy 5 min para activártelo?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Variante (química alta en llamada original)</div><div class="phrase-box" data-phrase>Ey [Nombre], 5 min tuyos hoy. Me dieron acceso a una herramienta nueva de Víctor y te quiero regalar 10 guiones virales y 5 consultas a su IA. Dime hueco.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
     </div><div class="subsection">
       <button class="subsection-header" onclick="toggleSub(this)">
         <div><div class="subsection-title">M2 · Cuando responden</div><div class="subsection-subtitle">4 escenarios</div></div>
         <span class="chevron">▼</span>
       </button>
-      <div class="subsection-body"><div class="case-label">Responde con hora</div><div class="phrase-box" data-phrase>Hecho, te marco a las [X]. Hazte 30 min y ten pantalla a mano, que te lo enseño en vivo.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Pregunta qué es</div><div class="phrase-box" data-phrase>Te lo enseño en la llamada porque por chat pierde sentido. ¿A qué hora te pillo hoy?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Dice ahora puedo</div><div class="phrase-box" data-phrase>Genial, te marco en 2 min. Ten pantalla a mano.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">⚠ Marca en 2 min exactos, no más</div><div class="case-label">Pide info por chat (precio, fechas, qué es)</div><div class="phrase-box" data-phrase>Eso es justo lo que quiero enseñarte por llamada, porque depende de tu caso. ¿Cuándo te llamo hoy?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
+      <div class="subsection-body"><div class="case-label">Responde con hora</div><div class="phrase-box" data-phrase>Hecho, te paso enlace de Meet para las [X]. Hazte 30 min y ten pantalla a mano, que vamos a verlo en vivo.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Pregunta qué es</div><div class="phrase-box" data-phrase>Te lo enseño por videollamada porque por chat pierde sentido, hay que verlo en pantalla. ¿A qué hora te cuadra hoy?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Dice ahora puedo</div><div class="phrase-box" data-phrase>Genial, te paso Meet en 2 min. Ten pantalla a mano.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">⚠ Manda el Meet en 2 min exactos, no más. Y arranca tú la videollamada puntual.</div><div class="case-label">Pide info por chat (precio, fechas, qué es)</div><div class="phrase-box" data-phrase>Eso es justo lo que quiero enseñarte por videollamada, porque depende de tu caso. ¿A qué hora te cuadra hoy?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
     </div><div class="subsection">
       <button class="subsection-header" onclick="toggleSub(this)">
         <div><div class="subsection-title">Recordatorios pre-llamada</div><div class="subsection-subtitle">Suben show rate de 60% a 85%</div></div>
         <span class="chevron">▼</span>
       </button>
-      <div class="subsection-body"><div class="case-label">Llamada hoy (>3h después) · 1h antes</div><div class="phrase-box" data-phrase>[Nombre], en 1h te marco. ¿Sigue bien?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Llamada para mañana o más · La mañana del día</div><div class="phrase-box" data-phrase>[Nombre], confirmando que nos juntamos hoy a las [X]. Ten 30 min y pantalla.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
+      <div class="subsection-body"><div class="case-label">Llamada hoy (>3h después) · 1h antes</div><div class="phrase-box" data-phrase>[Nombre], en 1h arrancamos por Meet. ¿Sigue bien?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Llamada para mañana o más · La mañana del día</div><div class="phrase-box" data-phrase>[Nombre], confirmando que nos juntamos hoy a las [X]. Ten 30 min y pantalla.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
     </div><div class="subsection">
       <button class="subsection-header" onclick="toggleSub(this)">
         <div><div class="subsection-title">M3 · Silencio 12-24h sin agendar</div><div class="subsection-subtitle">Audio 15-20s</div></div>
@@ -262,7 +244,7 @@ main { padding-bottom: 5rem; }
         <div><div class="subsection-title">M4 · Silencio 24-36h más</div><div class="subsection-subtitle">Audio firme · último mensaje</div></div>
         <span class="chevron">▼</span>
       </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>[Nombre], último mensaje. ¿Avanzamos o lo dejamos? Si quieres avanzar dime hora hoy y te marco yo. Si lo dejamos, dímelo y cerramos sin más vueltas. Lo que no puedo es dejarte en stand-by.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Forzar decisión binaria. Sin respuesta → nurturing.</div></div>
+      <div class="subsection-body"><div class="phrase-box" data-phrase>[Nombre], último mensaje. ¿Avanzamos o lo dejamos? Si quieres avanzar dime hora hoy y te paso Meet yo. Si lo dejamos, dímelo y cerramos sin más vueltas. Lo que no puedo es dejarte en stand-by.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Forzar decisión binaria. Sin respuesta → nurturing.</div></div>
     </div><div class="subsection">
       <button class="subsection-header" onclick="toggleSub(this)">
         <div><div class="subsection-title">Protocolo No Show</div><div class="subsection-subtitle">Si agendamos y no aparece</div></div>
@@ -274,19 +256,19 @@ main { padding-bottom: 5rem; }
         <div><div class="subsection-title">M1 · Primer mensaje</div><div class="subsection-subtitle"><15 min desde asignación</div></div>
         <span class="chevron">▼</span>
       </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>[Nombre], soy [X], hablamos la otra vez. ¿Cuándo te pillo 2 min hoy? Te quería retomar lo nuestro.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Variante (química alta en llamada original)</div><div class="phrase-box" data-phrase>Ey [Nombre], 2 min tuyos hoy y te llamo. Hay algo nuevo desde la última vez.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
+      <div class="subsection-body"><div class="phrase-box" data-phrase>[Nombre], soy [X], hablamos la otra vez. No es para presionarte ni nada, me han dado acceso a una herramienta nueva de Víctor y te quería regalar 10 guiones virales y 5 consultas a su cerebro IA. ¿Cuándo te pillo hoy 5 min para activártelo?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Variante (química alta en llamada original)</div><div class="phrase-box" data-phrase>Ey [Nombre], 5 min tuyos hoy. Hay algo nuevo de Víctor que te quiero regalar antes de que se acabe. Dime hueco.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
     </div><div class="subsection">
       <button class="subsection-header" onclick="toggleSub(this)">
         <div><div class="subsection-title">M2 · Cuando responden</div><div class="subsection-subtitle">4 escenarios</div></div>
         <span class="chevron">▼</span>
       </button>
-      <div class="subsection-body"><div class="case-label">Responde con hora</div><div class="phrase-box" data-phrase>Hecho, te marco a las [X]. Hazte 30 min y ten pantalla a mano, que te lo enseño en vivo.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Pregunta qué es</div><div class="phrase-box" data-phrase>Te lo enseño en la llamada porque por chat pierde sentido. ¿A qué hora te pillo hoy?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Dice ahora puedo</div><div class="phrase-box" data-phrase>Genial, te marco en 2 min. Ten pantalla a mano.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">⚠ Marca en 2 min exactos, no más</div><div class="case-label">Pide info por chat (precio, fechas, qué es)</div><div class="phrase-box" data-phrase>Eso es justo lo que quiero enseñarte por llamada, porque depende de tu caso. ¿Cuándo te llamo hoy?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
+      <div class="subsection-body"><div class="case-label">Responde con hora</div><div class="phrase-box" data-phrase>Hecho, te paso enlace de Meet para las [X]. Hazte 30 min y ten pantalla a mano, que vamos a verlo en vivo.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Pregunta qué es</div><div class="phrase-box" data-phrase>Te lo enseño por videollamada porque por chat pierde sentido, hay que verlo en pantalla. ¿A qué hora te cuadra hoy?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Dice ahora puedo</div><div class="phrase-box" data-phrase>Genial, te paso Meet en 2 min. Ten pantalla a mano.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">⚠ Manda el Meet en 2 min exactos, no más. Y arranca tú la videollamada puntual.</div><div class="case-label">Pide info por chat (precio, fechas, qué es)</div><div class="phrase-box" data-phrase>Eso es justo lo que quiero enseñarte por videollamada, porque depende de tu caso. ¿A qué hora te cuadra hoy?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
     </div><div class="subsection">
       <button class="subsection-header" onclick="toggleSub(this)">
         <div><div class="subsection-title">Recordatorios pre-llamada</div><div class="subsection-subtitle">Suben show rate de 60% a 85%</div></div>
         <span class="chevron">▼</span>
       </button>
-      <div class="subsection-body"><div class="case-label">Llamada hoy (>3h después) · 1h antes</div><div class="phrase-box" data-phrase>[Nombre], en 1h te marco. ¿Sigue bien?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Llamada para mañana o más · La mañana del día</div><div class="phrase-box" data-phrase>[Nombre], confirmando que nos juntamos hoy a las [X]. Ten 30 min y pantalla.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
+      <div class="subsection-body"><div class="case-label">Llamada hoy (>3h después) · 1h antes</div><div class="phrase-box" data-phrase>[Nombre], en 1h arrancamos por Meet. ¿Sigue bien?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Llamada para mañana o más · La mañana del día</div><div class="phrase-box" data-phrase>[Nombre], confirmando que nos juntamos hoy a las [X]. Ten 30 min y pantalla.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
     </div><div class="subsection">
       <button class="subsection-header" onclick="toggleSub(this)">
         <div><div class="subsection-title">M3 · Silencio 12-24h sin agendar</div><div class="subsection-subtitle">Audio 15-20s</div></div>
@@ -310,7 +292,7 @@ main { padding-bottom: 5rem; }
         <div><div class="subsection-title">Vía 1 · Llamada telefónica</div><div class="subsection-subtitle">Energía altísima. Sin energía no hay resultado.</div></div>
         <span class="chevron">▼</span>
       </button>
-      <div class="subsection-body"><div class="case-label">Apertura (cuando coge)</div><div class="phrase-box" data-phrase>¡¿[Nombre]?! Soy [X] del equipo de Víctor Heras. Te marco porque estamos abriendo plazas esta semana para activar la IA de Víctor con unos cuantos perfiles y entras dentro. Es una sesión rápida de onboarding para configurártela y que la veas funcionando con tu caso.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Cierre con 2 huecos (justo después)</div><div class="phrase-box" data-phrase>Mañana tengo estos 2 huecos: a las [X] o a las [Y]. ¿Cuál te viene mejor?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Asume el sí. NO preguntes "¿te interesa?". Solo cuándo. <strong class="gold">Una vez agendado, manda invitación de Google Calendar al correo del lead</strong> con el enlace de Meet generado automáticamente. Nada de agendarlo solo en tu calendario — si el lead no la recibe en su agenda, sube el no-show.</div><div class="case-label">Pregunta de calificación blanda (justo después de agendar)</div><div class="phrase-box" data-phrase>Oye [Nombre], rápido antes de colgar: ¿la decisión sobre cómo escalar el negocio la tomas tú solo o hay alguien más implicado, socio, pareja, alguien que esté ahí también?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Si dice que solo él → seguimos. Si dice que hay otra persona → siguiente bloque. NO mencionar "tomadores de decisión", suena a venta. La pregunta es honesta y curiosa.</div><div class="case-label">Si hay otra persona implicada (caballo de troya)</div><div class="phrase-box" data-phrase>Perfecto. Mira, lo ideal es que esa persona también esté en la llamada cuando configuramos la IA, así la veis los dos en directo y no tienes que estar luego explicándoselo tú a medias. Te lo digo más que nada porque le da bastante el factor wow cuando lo ves en vivo. ¿Cuándo podéis estar los dos?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">🐴 CABALLO DE TROYA. NUNCA decir "para tomar la decisión", eso huele a venta. La razón es "que lo vea contigo en directo". Reagenda en esta misma llamada. Nada de "ya te aviso".</div><div class="case-label">Compromiso pre-colgar</div><div class="phrase-box" data-phrase>Todo listo [Nombre]. Oye, por cierto, antes de colgar... ¿habría algo que te pudiese impedir presentarte mañana a las [X]? Te lo digo más que nada porque estamos a tope y en caso de que no pudieses, no podemos reagendar por respeto a los demás proyectos.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Confirmación logística (cierra el sí)</div><div class="phrase-box" data-phrase>OK perfecto, es decir vas a estar en casa, en un lugar tranquilo, con buena conexión a internet y con el tiempo que merece nuestra reunión, que es mínimo una hora, ¿no?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Cierre llamada</div><div class="phrase-box" data-phrase>OK [Nombre], recuerda que nuestra reunión es a las [X] hora España (que en [tu país] son las [Y]). Te pasaré un enlace de Google Meet para la reunión. Chao.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
+      <div class="subsection-body"><div class="case-label">Apertura (cuando coge)</div><div class="phrase-box" data-phrase>¡¿[Nombre]?! Soy [X] del equipo de Víctor Heras. Te llamo porque estamos abriendo plazas esta semana para activar la IA de Víctor con unos cuantos perfiles y entras dentro. Vamos a hacer una videollamada rápida de 30 minutos por Meet, te configuro la herramienta en directo, te dejo viendo cómo funciona con tu caso, y ya está.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Cierre con 2 huecos (justo después)</div><div class="phrase-box" data-phrase>Mañana tengo estos 2 huecos: a las [X] o a las [Y]. ¿Cuál te viene mejor?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Asume el sí. NO preguntes "¿te interesa?". Solo cuándo. <strong class="gold">Una vez agendado, manda invitación de Google Calendar al correo del lead</strong> con el enlace de Meet generado automáticamente. Nada de agendarlo solo en tu calendario — si el lead no la recibe en su agenda, sube el no-show.</div><div class="case-label">Pregunta de calificación blanda (justo después de agendar)</div><div class="phrase-box" data-phrase>Oye [Nombre], rápido antes de colgar: ¿la decisión sobre cómo escalar el negocio la tomas tú solo o hay alguien más implicado, socio, pareja, alguien que esté ahí también?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Si dice que solo él → seguimos. Si dice que hay otra persona → siguiente bloque. NO mencionar "tomadores de decisión", suena a venta. La pregunta es honesta y curiosa.</div><div class="case-label">Si hay otra persona implicada (caballo de troya)</div><div class="phrase-box" data-phrase>Perfecto. Mira, lo ideal es que esa persona también esté en la videollamada cuando configuramos la IA, así la veis los dos en directo y no tienes que estar luego explicándoselo tú a medias. Te lo digo más que nada porque le da bastante el factor wow cuando lo ves en vivo. ¿Cuándo podéis estar los dos?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">🐴 CABALLO DE TROYA. NUNCA decir "para tomar la decisión", eso huele a venta. La razón es "que lo vea contigo en directo". Reagenda en esta misma llamada. Nada de "ya te aviso".</div><div class="case-label">Compromiso pre-colgar</div><div class="phrase-box" data-phrase>Todo listo [Nombre]. Oye, por cierto, antes de colgar... ¿habría algo que te pudiese impedir conectarte mañana al Meet a las [X]? Te lo digo más que nada porque estamos a tope y en caso de que no pudieses, no podemos reagendar por respeto a los demás proyectos.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Confirmación logística (cierra el sí)</div><div class="phrase-box" data-phrase>OK perfecto, es decir vas a estar en casa, en un lugar tranquilo, con buena conexión a internet y con los 30 minutos que dura nuestra videollamada, ¿no?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Cierre llamada</div><div class="phrase-box" data-phrase>OK [Nombre], recuerda que nuestra reunión es a las [X] hora España (que en [tu país] son las [Y]). Te pasaré un enlace de Google Meet para la reunión. Chao.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
     </div><div class="subsection">
       <button class="subsection-header" onclick="toggleSub(this)">
         <div><div class="subsection-title">WhatsApp post-llamada</div><div class="subsection-subtitle">Justo después de colgar</div></div>
@@ -324,7 +306,7 @@ main { padding-bottom: 5rem; }
       </button>
       <div class="subsection-body"><div class="note" style="margin-bottom:0.75rem;">Llamamos 2 veces por teléfono. Si no coge, secuencia de WhatsApp encadenada. La idea: máxima curiosidad y abrir el chat. Si decimos quiénes somos y de qué va en frío, lo lee y pasa.</div><div class="info-box info-gold" style="margin-bottom:0.75rem;font-size:0.78rem;line-height:1.6;">
 <strong class="gold">El lead, al recibir el WhatsApp, piensa:</strong> "¿quién?" · "¿qué quieren?" · "¿me la cuelan?" · "¿gané algo?" · "¿por qué yo?" · "¿por qué ahora?" · "¿hay truco?" · "huele a gato encerrado". <strong>M1 y M2 generan apertura, no responden. El audio M3 las resuelve todas sin que él pregunte.</strong>
-</div><div class="case-label msg-step"><span class="msg-badge">1</span> · Rompedor sin contexto</div><div class="phrase-box" data-phrase>[Nombre] ¿estás por aquí?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Suena a contacto conocido, no a vendedor. Open rate alto. NO mandar "Buenas tardes" ni "Hola, soy X de tal empresa", spam al segundo.</div><div class="case-label msg-step"><span class="msg-badge audio">2</span> · Pista del regalo + anuncio de audio</div><div class="phrase-box" data-phrase>Te he intentado llamar 2 veces, te grabo audio rapidito por aquí que tienes algo asignado esta semana y quería contártelo.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Justifica el contacto, suelta zanahoria y anuncia audio. <strong class="gold">NO digas qué es ni quién eres</strong>, eso va en el audio.</div><div class="case-label msg-step"><span class="msg-badge audio">3</span> · AUDIO (40-50s, resuelve las 9 preguntas)</div><div class="phrase-box" data-phrase>[Nombre], qué tal, soy [X] del equipo de Víctor Heras. Te grabo esto porque esta semana estamos activando un acceso anticipado a una herramienta nueva que ha sacado Víctor, y tu nombre entró en la lista junto con otros perfiles que estamos contactando. Es parte del programa que va a salir, simplemente te lo estamos dando antes a ti. Te lo activo yo contigo en una llamada rápida de 15 minutos, te dejo viendo cómo funciona aplicado a tu negocio, y ya está. Lo único, los huecos van por orden y esta semana se llenan rápido, o sea que en cuanto me digas que estás, cuadramos. Hablamos.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note"><strong class="gold">Mapa rápido:</strong> "soy del equipo de Víctor" responde quién · "tu nombre entró en la lista" responde por qué tú · "te lo estamos dando antes" responde gané algo · "15 min y ya" responde qué quieren + truco · "esta semana, huecos por orden" responde por qué ahora.<br><br><strong class="gold">⚠ NO digas "no es venta"</strong>, activa la sospecha. Grábalo de corrido, sin actuar, que se note natural.</div><div class="case-label">Después del audio · Video de Víctor</div><div class="phrase-box" data-phrase>Y mira, para que veas de qué te hablo, te dejo aquí un vídeo corto de Víctor explicándolo él mismo.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">+ <strong class="gold">Video de Víctor</strong> adjunto. Resuelve "¿esto es real?". En cuanto contesten, llamamos y hacemos el pitch de Vía 1.</div></div>
+</div><div class="case-label msg-step"><span class="msg-badge">1</span> · Rompedor sin contexto</div><div class="phrase-box" data-phrase>[Nombre] ¿estás por aquí?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Suena a contacto conocido, no a vendedor. Open rate alto. NO mandar "Buenas tardes" ni "Hola, soy X de tal empresa", spam al segundo.</div><div class="case-label msg-step"><span class="msg-badge audio">2</span> · Pista del regalo + anuncio de audio</div><div class="phrase-box" data-phrase>Te he intentado llamar 2 veces, te grabo audio rapidito por aquí que tienes algo asignado esta semana y quería contártelo.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Justifica el contacto, suelta zanahoria y anuncia audio. <strong class="gold">NO digas qué es ni quién eres</strong>, eso va en el audio.</div><div class="case-label msg-step"><span class="msg-badge audio">3</span> · AUDIO (40-50s, resuelve las 9 preguntas)</div><div class="phrase-box" data-phrase>[Nombre], qué tal, soy [X] del equipo de Víctor Heras. Te grabo esto porque esta semana estamos activando un acceso anticipado a una herramienta nueva que ha sacado Víctor, y tu nombre entró en la lista junto con otros perfiles que estamos contactando. Es parte del programa que va a salir, simplemente te lo estamos dando antes a ti. La activación va por videollamada rápida de 30 minutos por Meet, comparto pantalla y te lo configuro en directo, te dejo viendo cómo funciona aplicado a tu negocio, y ya está. Lo único, los huecos van por orden y esta semana se llenan rápido, o sea que en cuanto me digas que estás, cuadramos. Hablamos.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note"><strong class="gold">Mapa rápido:</strong> "soy del equipo de Víctor" responde quién · "tu nombre entró en la lista" responde por qué tú · "te lo estamos dando antes" responde gané algo · "30 min por Meet y ya está" responde qué quieren + truco · "esta semana, huecos por orden" responde por qué ahora.<br><br><strong class="gold">⚠ NO digas "no es venta"</strong>, activa la sospecha. Grábalo de corrido, sin actuar, que se note natural.</div><div class="case-label">Después del audio · Video de Víctor</div><div class="phrase-box" data-phrase>Y mira, para que veas de qué te hablo, te dejo aquí un vídeo corto de Víctor explicándolo él mismo.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">+ <strong class="gold">Video de Víctor</strong> adjunto. Resuelve "¿esto es real?". En cuanto contesten, llamamos y hacemos el pitch de Vía 1.</div></div>
     </div><div class="subsection">
       <button class="subsection-header" onclick="toggleSub(this)">
         <div><div class="subsection-title">Rescate Vía 2 · 24h sin respuesta</div><div class="subsection-subtitle">Texto · pone dignidad y deadline</div></div>
@@ -344,7 +326,7 @@ Si quieres que te lo active, dime y cuadramos. Si no es para ti ahora mismo, tam
         <div><div class="subsection-title">Vía 3 · WhatsApp directo (volumen alto)</div><div class="subsection-subtitle">Alternativa si las agendas están a tope</div></div>
         <span class="chevron">▼</span>
       </button>
-      <div class="subsection-body"><div class="note" style="margin-bottom:0.75rem;">Solo si el volumen es altísimo y se agenda directo por chat. Mismo principio que Vía 2.</div><div class="case-label msg-step"><span class="msg-badge">1</span> · Rompedor sin contexto</div><div class="phrase-box" data-phrase>[Nombre] ¿estás por aquí?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Mismo rompedor que Vía 2.</div><div class="case-label msg-step"><span class="msg-badge audio">2</span> · Pista + anuncio de audio</div><div class="phrase-box" data-phrase>Soy [X], del equipo de Víctor Heras. Te escribo porque esta semana estamos abriendo unas plazas concretas y tu nombre entró en la lista. Te grabo audio aquí rápido que es más sencillo que escribirlo todo.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Aquí sí decimos quiénes somos en M2 porque no hubo llamada previa. La palanca sigue siendo "tu nombre entró" = regalo.</div><div class="case-label msg-step"><span class="msg-badge audio">3</span> · AUDIO (45-55s, resuelve las 9 preguntas + cierra con huecos)</div><div class="phrase-box" data-phrase>[Nombre], qué tal. Te grabo esto rápido porque esta semana estamos activando un acceso anticipado a una herramienta nueva que ha sacado Víctor, y tu nombre entró en la lista de los que la reciben antes junto con otros perfiles que estamos contactando. Es parte del programa que va a salir, simplemente te lo estamos dando antes a ti. Te lo activo yo contigo en una llamada de 15 minutos, te dejo viendo cómo funciona aplicado a tu caso, y ya está. Lo único, los huecos van por orden y se llenan rápido. Tengo un par mañana, a las [X] o a las [Y] hora España. ¿Cuál te cuadra? Si ninguno te va, dime y buscamos otro hueco. Hablamos.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Mismo audio base que Vía 2 pero <strong class="gold">cierra ya con 2 huecos</strong> (no habrá llamada de pitch después). Asume el sí.</div><div class="case-label">Después del audio · Video de Víctor</div><div class="phrase-box" data-phrase>Y para que veas de qué te hablo, te dejo aquí un vídeo de Víctor explicándolo él mismo.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">+ <strong class="gold">Video de Víctor</strong> adjunto. Cierra el "¿esto es real?".</div></div>
+      <div class="subsection-body"><div class="note" style="margin-bottom:0.75rem;">Solo si el volumen es altísimo y se agenda directo por chat. Mismo principio que Vía 2.</div><div class="case-label msg-step"><span class="msg-badge">1</span> · Rompedor sin contexto</div><div class="phrase-box" data-phrase>[Nombre] ¿estás por aquí?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Mismo rompedor que Vía 2.</div><div class="case-label msg-step"><span class="msg-badge audio">2</span> · Pista + anuncio de audio</div><div class="phrase-box" data-phrase>Soy [X], del equipo de Víctor Heras. Te escribo porque esta semana estamos abriendo unas plazas concretas y tu nombre entró en la lista. Te grabo audio aquí rápido que es más sencillo que escribirlo todo.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Aquí sí decimos quiénes somos en M2 porque no hubo llamada previa. La palanca sigue siendo "tu nombre entró" = regalo.</div><div class="case-label msg-step"><span class="msg-badge audio">3</span> · AUDIO (45-55s, resuelve las 9 preguntas + cierra con huecos)</div><div class="phrase-box" data-phrase>[Nombre], qué tal. Te grabo esto rápido porque esta semana estamos activando un acceso anticipado a una herramienta nueva que ha sacado Víctor, y tu nombre entró en la lista de los que la reciben antes junto con otros perfiles que estamos contactando. Es parte del programa que va a salir, simplemente te lo estamos dando antes a ti. La activación va por videollamada de 30 minutos por Meet, te dejo viendo cómo funciona aplicado a tu caso, y ya está. Lo único, los huecos van por orden y se llenan rápido. Tengo un par mañana, a las [X] o a las [Y] hora España. ¿Cuál te cuadra? Si ninguno te va, dime y buscamos otro hueco. Hablamos.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Mismo audio base que Vía 2 pero <strong class="gold">cierra ya con 2 huecos</strong> (no habrá llamada de pitch después). Asume el sí.</div><div class="case-label">Después del audio · Video de Víctor</div><div class="phrase-box" data-phrase>Y para que veas de qué te hablo, te dejo aquí un vídeo de Víctor explicándolo él mismo.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">+ <strong class="gold">Video de Víctor</strong> adjunto. Cierra el "¿esto es real?".</div></div>
     </div><div class="subsection">
       <button class="subsection-header" onclick="toggleSub(this)">
         <div><div class="subsection-title">Rescate Vía 3 · 24h sin respuesta</div><div class="subsection-subtitle">Huecos cedidos a otro proyecto</div></div>
@@ -374,7 +356,7 @@ Si quieres que te lo active, dime y cuadramos. Si no es para ti ahora mismo, tam
         <div><div class="subsection-title">Vía 1 · Llamada de confirmación</div><div class="subsection-subtitle">Energía alta. Asume el sí.</div></div>
         <span class="chevron">▼</span>
       </button>
-      <div class="subsection-body"><div class="case-label">Apertura (cuando coge)</div><div class="phrase-box" data-phrase>¡¿[Nombre]?! Soy [X], del equipo de Víctor Heras. Te llamo rápido para confirmar tu reunión de mañana a las [X hora España] (que en tu país son las [Y]). ¿Es correcto?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Confirmar logística</div><div class="phrase-box" data-phrase>Oye [Nombre], para que la llamada salga bien y podamos configurar la IA en condiciones, necesito confirmarte algo: ¿mañana a esa hora vas a estar frente al ordenador, en un sitio tranquilo y con una hora reservada sin interrupciones?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Pregunta de calificación blanda</div><div class="phrase-box" data-phrase>Una cosa [Nombre], rápido: ¿la decisión sobre cómo escalar el negocio la tomas tú solo o hay alguien más implicado, socio, pareja, alguien que esté ahí también?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Si dice que solo él → seguimos. Si dice que hay otra persona → siguiente bloque. Pregunta honesta, no "tomadores de decisión".</div><div class="case-label">Si hay otra persona implicada (caballo de troya)</div><div class="phrase-box" data-phrase>Perfecto. Mira, lo ideal es que esa persona también esté en la llamada cuando configuramos la IA, así la veis los dos en directo y no tienes que estar luego explicándoselo tú a medias. Le da bastante el factor wow cuando lo ves en vivo. ¿Cuándo podéis estar los dos?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">🐴 CABALLO DE TROYA. NUNCA "para tomar la decisión". Razón = verlo en directo juntos. Reagenda en esta misma llamada.</div><div class="case-label">Compromiso pre-colgar (silencio hasta sí)</div><div class="phrase-box" data-phrase>Perfecto, pues tenemos todo listo ya. Oye, por cierto, antes de colgar [Nombre]... ¿habría algo que te pudiese impedir presentarte mañana a las [X]?
+      <div class="subsection-body"><div class="case-label">Apertura (cuando coge)</div><div class="phrase-box" data-phrase>¡¿[Nombre]?! Soy [X], del equipo de Víctor Heras. Te llamo rápido para confirmar tu reunión de mañana a las [X hora España] (que en tu país son las [Y]). ¿Es correcto?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Confirmar logística</div><div class="phrase-box" data-phrase>Oye [Nombre], para que la llamada salga bien y podamos configurar la IA en condiciones, necesito confirmarte algo: ¿mañana a esa hora vas a estar frente al ordenador, en un sitio tranquilo y con una hora reservada sin interrupciones?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">Pregunta de calificación blanda</div><div class="phrase-box" data-phrase>Una cosa [Nombre], rápido: ¿la decisión sobre cómo escalar el negocio la tomas tú solo o hay alguien más implicado, socio, pareja, alguien que esté ahí también?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Si dice que solo él → seguimos. Si dice que hay otra persona → siguiente bloque. Pregunta honesta, no "tomadores de decisión".</div><div class="case-label">Si hay otra persona implicada (caballo de troya)</div><div class="phrase-box" data-phrase>Perfecto. Mira, lo ideal es que esa persona también esté en la videollamada cuando configuramos la IA, así la veis los dos en directo y no tienes que estar luego explicándoselo tú a medias. Le da bastante el factor wow cuando lo ves en vivo. ¿Cuándo podéis estar los dos?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">🐴 CABALLO DE TROYA. NUNCA "para tomar la decisión". Razón = verlo en directo juntos. Reagenda en esta misma llamada.</div><div class="case-label">Compromiso pre-colgar (silencio hasta sí)</div><div class="phrase-box" data-phrase>Perfecto, pues tenemos todo listo ya. Oye, por cierto, antes de colgar [Nombre]... ¿habría algo que te pudiese impedir conectarte mañana al Meet a las [X]?
 
 Te lo digo más que nada porque estamos a tope y en caso de que no asistas, no vamos a poder reagendarte por respeto a los demás proyectos que están en lista de espera. ¿Cuento con tu palabra al 100% de que estarás ahí puntual?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">SILENCIO HASTA QUE DIGA "SÍ". No llenes el espacio. Su sí es el contrato.</div></div>
     </div><div class="subsection">
@@ -421,117 +403,214 @@ Como vamos a tope y tenemos un alto volumen, si te bloqueo el hueco y luego no a
       <div class="subsection-body"><div class="case-label msg-step"><span class="msg-badge">1</span> · Estoy en el Meet</div><div class="phrase-box" data-phrase>Oye [Nombre], llevo un par de minutos en el Meet. Voy con la agenda a tope hoy, dime si te vas a conectar ya o si prefieres que la cancelemos y le pase tu turno al siguiente. Lo que me digas está bien, pero confírmame para organizarme.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label msg-step"><span class="msg-badge">2</span> · Salí del Meet</div><div class="phrase-box" data-phrase>Me acabo de salir de la reunión, sin verte por ahí dejo el acceso pausado por mi parte. Si todavía quieres que te lo active esta semana, avísame y miro si me queda algún hueco.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">En caso de cancelado o no show, equipo de Setting entra en juego para rescatar el lead.</div></div>
     </div></div>
   </div>
-</div><div class="section" data-search="llamada fases apertura rapport marco onboarding demo cierre">
+</div><div class="section" data-search="llamada fases rapport marco setup descubrimiento demo palanca pitch cierre videollamada meet 5 preguntas 1 de 10">
   <button class="section-header" onclick="toggleSection(this)">
     <span class="section-icon">📞</span>
     <div class="section-meta">
       <div class="section-title">03 · La Llamada</div>
-      <div class="section-subtitle">30 min · 8 fases</div>
+      <div class="section-subtitle">Videollamada Meet · 30 min · 6 fases</div>
     </div>
     <span class="chevron">▼</span>
   </button>
   <div class="section-body">
     <div class="context-tag">CONTEXTO: <span data-context-label></span></div>
-    <div class="info-box info-gold"><strong class="gold">30 min con margen 15.</strong> 8 fases hiladas. Cada fase con su frase puente.</div>
-<div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">Fase 1 · Apertura + Rapport</div><div class="subsection-subtitle">30-45s</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>¡[Nombre]! ¿Qué tal? Soy [X], del equipo de Víctor. Antes de que arranquemos, cuéntame rápido — ¿desde dónde me hablas?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Energía alta, cara, sonrisa. <strong class="gold">NO decir "máquina" ni "esto no es llamada de venta"</strong>, activa la sospecha que no tenía. Viene a un regalo, trátalo así.</div></div>
-    </div>
-<div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">Fase 2 · Marco + El Porqué</div><div class="subsection-subtitle">30s</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>Te comento cómo vamos a llevar esta llamada: primero activamos tu IA, te haré una serie de preguntas para optimizarla, le metemos preguntas reales sobre tu negocio para que veas cómo funciona aplicado a ti, y al final del onboarding te explico cómo te queda todo configurado. ¿Va?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="case-label">El porqué (cambia según contexto)</div><div data-context-show="reserva"><div class="phrase-box" data-phrase>Ya que pagaste tu reserva, te damos acceso previo a parte de lo que ya está pagado. Esto es el 1% del programa.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div><div data-context-show="seguimiento"><div class="phrase-box" data-phrase>Viendo tu caso, que mostraste interés y que eres un perfil con potencial alto, te damos el 1% del programa para que veas cómo es por dentro una pequeña parte.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div><div data-context-show="closer-contacta"><div class="phrase-box" data-phrase>Estamos abriendo acceso anticipado a una parte del programa de Víctor a perfiles que encajan, y por lo que vi de ti me cuadras. Es el 1% del programa, para que veas cómo funciona aplicado a tu caso.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div><div data-context-show="setter-agenda"><div class="phrase-box" data-phrase>Después de lo que hablaste con [setter], te he asignado a ti porque encajas con el perfil que trabajamos. Te damos acceso anticipado a esta parte del programa para que veas cómo funciona aplicado a tu caso.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div><div class="note">El "al final te explico cómo queda configurado" instala anticipadamente el cierre.</div></div>
-    </div>
-<div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">Fase 3 · Pregunta de apertura encubierta</div><div class="subsection-subtitle">30s</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div data-context-show="reserva,seguimiento"><div class="phrase-box" data-phrase>Una pregunta rápida antes de empezar a configurar: ¿ha cambiado algo en tu situación desde la última vez que hablamos? ¿Sigues igual o ha pasado algo?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">NO leer literal, adaptar a cada lead.<br>Si empeoró = dolor más fácil. Si igual = "justo por eso te llamo". Si mejoró = "perfecto, esto acelera lo tuyo".</div></div><div data-context-show="closer-contacta,setter-agenda"><div class="phrase-box" data-phrase>Antes de empezar a configurar, cuéntame rápidamente dónde estás ahora mismo con tu negocio: ¿qué haces, cómo te va, qué te gustaría cambiar en los próximos meses?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">No hubo llamada previa: necesitas descubrimiento rápido aquí. Mantén la frase corta, deja que él hable 60-90 segundos. Ya te da la materia para personalizar todo lo demás.</div></div></div>
-    </div>
-<div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">Fase 4 · Onboarding = Descubrimiento camuflado</div><div class="subsection-subtitle">4-5 min</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>Genial, pues vamos a darle. Comparto pantalla y vamos rellenando juntos.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Cada pregunta del onboarding es descubrimiento:<br>· Nicho → "¿Sigues centrado en [X]?" / "¿En qué nicho estás?"<br>· Facturación → "¿Cómo lo llevas? ¿Lo del mes pasado?"<br>· Objetivo → "Recuerdo que querías llegar a [X]" / "¿Cuál es el objetivo concreto?"<br>· Bloqueos → "¿Qué te está costando más ahora?"</div></div>
-    </div>
-<div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">Fase 5 · Demo aplicada</div><div class="subsection-subtitle">2-3 min</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>Vale, ya tenemos tu perfil cargado. Vamos a meterle la primera pregunta — y la vamos a aprovechar bien. ¿Qué es lo que más te está costando ahora mismo a nivel [contenido/captación/cierre]?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">⚠ SOLO 5 preguntas y 10 guiones. La primera se hace JUNTOS pensando en lo que más le ayude.<br><br>👉 Ver sección "Prompts para la IA" para los ejemplos completos.</div></div>
-    </div>
-<div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">Fase 6 · Destapar objeción</div><div class="subsection-subtitle">1-2 min</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div data-context-show="reserva,seguimiento"><div class="phrase-box" data-phrase>Mira, mientras lo procesas, una cosa que me quedó con duda de la última vez. Cuando me dijiste [su objeción], normalmente eso es por una de tres cosas: el dinero, el momento, o que no terminas de ver el encaje. Siendo honestos, ¿cuál era la tuya?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Validar → aislar → resolver volviendo al dolor.</div></div><div data-context-show="closer-contacta,setter-agenda"><div class="phrase-box" data-phrase>Mira, mientras lo procesas — siendo honestos. Cuando la gente se plantea avanzar con algo así, normalmente lo que les frena es una de tres: el dinero, el momento, o que no terminan de ver el encaje. ¿Cuál es la tuya, si tuvieras que elegir?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Como no hubo objeción previa concreta, la sacas aquí desde cero. Mismo principio: validar → aislar → resolver.</div></div></div>
-    </div>
-<div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">Fase 7 · Cierre antes de colgar</div><div class="subsection-subtitle">2-3 min</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>Vale, tiene sentido. Mira, antes de colgar — y esto es lo que te quería plantear...
+    <div class="info-box info-gold"><strong class="gold">Videollamada por Meet · pantalla compartida desde minuto 1.</strong> El setup de la IA <strong>es</strong> el descubrimiento. Cuando terminas el setup, ya tienes nicho, facturación, objetivo, ads y objetivo de cuenta. Con eso entras al pitch sin que parezca venta.</div>
 
-Te lo digo claro: esto que acabas de ver es el 1% de lo que está dentro. Te lo enseño así porque quiero que tú decidas con información, no a ciegas.
-
-Si lo dejamos hecho hoy, no solo se queda activada esta IA todo el tiempo del programa, sino que además entran:
-· 2 meses extra de acceso
-· Guía aplicada a tu nicho (las 10 estructuras virales que te muestro ahora)
-
-Si lo dejas para más adelante, sigue siendo el programa, pero estos extras ya no.
-
-¿Cómo lo ves?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note"><strong class="gold">SILENCIO.</strong> Quien hable primero, pierde.</div></div>
-    </div>
 <div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">Fase 8 · Pago o 2ª llamada</div><div class="subsection-subtitle">2-3 min</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="note">Ver sección "Cierre y Pago" para los 3 escenarios.<br>Pago se procesa EN la llamada. NO "te lo envío luego".</div></div>
+  <button class="subsection-header" onclick="toggleSub(this)">
+    <div><div class="subsection-title">Fase 1 · Rapport</div><div class="subsection-subtitle">1-2 min · Diferente según si te conoce o no</div></div>
+    <span class="chevron">▼</span>
+  </button>
+  <div class="subsection-body">
+    <div data-context-show="reserva,seguimiento">
+      <div class="case-label">YA CONOCE · Reserva o Seguimiento</div>
+      <div class="phrase-box" data-phrase>¡[Nombre]! Qué tal, otra vez por aquí. Oye, antes de meternos, ¿cómo te ha ido desde la última vez que hablamos? ¿Sigues con lo de [X que mencionó]?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+      <div class="note">Hubo videollamada antes, no eres un desconocido. Recoge algo concreto del Fathom (proyecto que tenía entre manos, situación personal, lo que dejasteis abierto). Demuestra que te acuerdas sin sobreactuar.</div>
+    </div>
+    <div data-context-show="closer-contacta,setter-agenda">
+      <div class="case-label">NO CONOCE · Closer contacta o Setter agenda</div>
+      <div class="phrase-box" data-phrase>¡[Nombre]! ¿Qué tal? Soy [X], del equipo de Víctor. Antes de que arranquemos, cuéntame rápido, ¿desde dónde me hablas?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+      <div class="note">No hay historial. Rapport corto pero humano, no formulario. La pregunta de la ciudad ya te abre conversación de 30s para bajar la guardia. Energía alta, sonrisa, cara. NO "soy de Sales Hacking" ni "voy a presentarte algo".</div>
     </div>
   </div>
-</div><div class="section" data-search="objecion dejame probarlo capas">
+</div>
+
+<div class="subsection">
+  <button class="subsection-header" onclick="toggleSub(this)">
+    <div><div class="subsection-title">Fase 2 · Marco</div><div class="subsection-subtitle">45s · Cómo va la videollamada</div></div>
+    <span class="chevron">▼</span>
+  </button>
+  <div class="subsection-body">
+    <div class="phrase-box" data-phrase>Mira [Nombre], te explico rápido cómo va esto para que vayas tranquilo. Tienes 30 min reservados conmigo. Te van a quedar activados 10 guiones virales y 5 consultas al cerebro de Víctor, que es básicamente preguntarle a él como si lo tuvieras delante. Para activártelo, primero rellenamos unos datos juntos, son 5 cosas rápidas, así te queda configurada para tu nicho. Después te enseño cómo funciona con tu propio caso y te dejo viendo cómo se mueve. ¿Va?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="case-label">El porqué (cambia según contexto)</div>
+    <div data-context-show="reserva"><div class="phrase-box" data-phrase>Ya que pagaste tu reserva, te damos acceso anticipado a una parte de lo que ya está pagado.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
+    <div data-context-show="seguimiento"><div class="phrase-box" data-phrase>Viendo tu caso de la última vez, te he asignado yo personalmente para darte el acceso.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
+    <div data-context-show="closer-contacta"><div class="phrase-box" data-phrase>Estamos activando acceso anticipado a perfiles concretos esta semana y tu nombre entró en la lista.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
+    <div data-context-show="setter-agenda"><div class="phrase-box" data-phrase>Después de lo que hablaste con [setter], te he asignado yo para darte el acceso.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
+    <div class="note"><strong class="gold">NO decir</strong> "esto no es llamada de venta" ni "máquina". Activa la sospecha que no tenía. Viene a un regalo.</div>
+  </div>
+</div>
+
+<div class="subsection">
+  <button class="subsection-header" onclick="toggleSub(this)">
+    <div><div class="subsection-title">Fase 3 · Setup IA + Descubrimiento</div><div class="subsection-subtitle">7-10 min · 5 preguntas que SON la calificación</div></div>
+    <span class="chevron">▼</span>
+  </button>
+  <div class="subsection-body">
+    <div class="info-box info-gold" style="margin-bottom:0.75rem;"><strong class="gold">🐴 El setup ES el descubrimiento.</strong> Las 5 preguntas te dan nicho, facturación, objetivo, ads y objetivo cuenta. Durante el setup, repreguntas según lo que cuente. NO interrogas. Compartes pantalla, vas rellenando, escuchas y profundizas con naturalidad.</div>
+
+    <div class="case-label">Puente para compartir pantalla</div>
+    <div class="phrase-box" data-phrase>Genial, pues vamos a darle. Comparto pantalla y vamos rellenando juntos, ¿ok?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+
+    <div class="case-label">1 · Email (lanza la invitación EN directo)</div>
+    <div class="phrase-box" data-phrase>Dime tu email para mandarte la invitación ahora mismo y te llega mientras hablamos. Te va a llegar un correo de Viralidad, dale un vistazo al inbox y a spam por si acaso.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="note">PENDIENTE confirmar branding del email con Iván.</div>
+
+    <div class="case-label">2 · Nicho</div>
+    <div class="phrase-box" data-phrase>¿En qué nicho estás trabajando ahora mismo? Esto le indica a la IA con qué tipo de contenido entrenarte los guiones.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+
+    <div class="case-label">3 · Facturación actual</div>
+    <div class="phrase-box" data-phrase>Ahora mismo, ¿cuánto estás facturando al mes con tu marca?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+
+    <div class="case-label">4 · Objetivo de facturación</div>
+    <div class="phrase-box" data-phrase>¿Y a dónde te gustaría llegar a corto plazo? ¿Cuál es el objetivo realista que te marcas?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+
+    <div class="case-label">5 · Inversión en ads</div>
+    <div class="phrase-box" data-phrase>¿Cuánto estás invirtiendo en publicidad ahora mismo? Si es cero también vale, es para que la IA sepa si tienes tráfico de pago detrás o vamos solo a orgánico.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+
+    <div class="case-label">6 · Objetivo de la cuenta</div>
+    <div class="phrase-box" data-phrase>Y ya por último, ¿cuál es el objetivo principal con tu cuenta de Instagram o redes? ¿Vender directo, generar autoridad, captar leads, comunidad?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+
+    <div class="info-box info-blue" style="margin-top:0.75rem;"><strong style="color:#8AA9C9;">Repreguntas para profundizar durante el setup:</strong> según lo que conteste, vas tirando del hilo. "¿Cuánto tiempo llevas con esto?" "¿Qué has intentado para subir de [X] a [Y]?" "¿Por qué crees que no estás ahí ya?" "¿Cómo te imaginas la situación si nada cambia los próximos 6 meses?". No las hagas todas, hilas las que pegan con lo que cuenta.</div>
+
+    <div class="case-label">Cierre del setup</div>
+    <div class="phrase-box" data-phrase>Listo, ya tengo tu perfil cargado. Le doy a enviar invitación... ya está. ¿Te llegó el correo? Genial. Vamos a probar cómo funciona contigo.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="note">⚠ La invitación se manda EN la videollamada, no después. Verifica que el lead la recibe antes de seguir.</div>
+  </div>
+</div>
+
+<div class="subsection">
+  <button class="subsection-header" onclick="toggleSub(this)">
+    <div><div class="subsection-title">Fase 4 · Demo aplicada</div><div class="subsection-subtitle">5-7 min · 1-2 guiones + 1-2 consultas</div></div>
+    <span class="chevron">▼</span>
+  </button>
+  <div class="subsection-body">
+    <div class="case-label">Puente al primer guión</div>
+    <div class="phrase-box" data-phrase>Vale, empezamos por un guión. Piensa qué tema te vendría bien tratar esta semana en tu contenido, lo que sea, y se lo metemos.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+
+    <div class="case-label">Tras generar el guión</div>
+    <div class="phrase-box" data-phrase>Mira, esto lo ha sacado basándose en tu nicho y tu objetivo. Fíjate cómo te lo divide: gancho, contexto, solución y CTA. Los 4 bloques que tiene cualquier viral. Lo único que tendrías que hacer tú es grabarlo. ¿Lo ves útil?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+
+    <div class="case-label">Puente a la consulta a Víctor</div>
+    <div class="phrase-box" data-phrase>Ahora vamos con lo otro, preguntarle a Víctor. Piensa una duda real que tengas sobre tu negocio, lo que sea, y se la lanzamos.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+
+    <div class="case-label">Tras la respuesta de Víctor</div>
+    <div class="phrase-box" data-phrase>¿Ves? Te responde tirando de más de 200 horas de clases suyas, los últimos 1.500 vídeos y los casos reales con sus alumnos. Es información que no encuentras buscando en YouTube ni en Google.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+
+    <div class="note">La demo no es obligatoria pero si no la haces, el lead se va a probarlo solo y lo pierdes. Hazla siempre. Si pone resistencia, "lo probamos contigo aquí 1 minuto, así te ahorras gastar usos al pedo".</div>
+  </div>
+</div>
+
+<div class="subsection">
+  <button class="subsection-header" onclick="toggleSub(this)">
+    <div><div class="subsection-title">Fase 5 · Palanca · Lite vs Premium</div><div class="subsection-subtitle">2 min · DESPUÉS de la demo, ANTES del pitch</div></div>
+    <span class="chevron">▼</span>
+  </button>
+  <div class="subsection-body">
+    <div class="info-box info-gold"><strong class="gold">Tono informativo, no de venta.</strong> Como quien explica las reglas. Solo se hace aquí, después de que YA vio funcionar la IA con su caso. Si lo dices antes, suena a presentación de producto.</div>
+
+    <div class="case-label">Funciones bloqueadas</div>
+    <div class="phrase-box" data-phrase>[Nombre], antes de seguir, una cosa importante. ¿Ves estas opciones aquí en gris? Mira: transcribir virales de competencia, calculadora de viralidad, biblioteca con el minuto exacto donde Víctor habla de cada tema, calendario de contenido, analizador de cuentas. Todo esto NO está en lo que tienes ahora.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+
+    <div class="case-label">Frame "1 de 10"</div>
+    <div class="phrase-box" data-phrase>Lo que tienes es Viralidad Lite, una versión recortada. Esto es 1 de 10. La completa es Viralidad.com, donde están todas estas opciones desbloqueadas, contenido ilimitado, todos los nichos y plataformas. Es otra liga.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+
+    <div class="case-label">Frame "no se puede comprar suelto"</div>
+    <div class="phrase-box" data-phrase>Y otra cosa para que la tengas clara: la Lite dura hasta que gastes los 10 guiones y las 5 consultas. Cuando se acaba, no se puede renovar pagando una suscripción aparte. La completa solo va dentro de un programa activo. Te lo digo para que aproveches bien lo que tienes mientras lo tengas.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+  </div>
+</div>
+
+<div class="subsection">
+  <button class="subsection-header" onclick="toggleSub(this)">
+    <div><div class="subsection-title">Fase 6 · Pitch + Cierre + Bonus</div><div class="subsection-subtitle">7-10 min · Recap + programa + tarjeta o transferencia</div></div>
+    <span class="chevron">▼</span>
+  </button>
+  <div class="subsection-body">
+    <div class="case-label">Recap personalizado (puente al pitch)</div>
+    <div class="phrase-box" data-phrase>Vale [Nombre], te resumo lo que veo. Me has dicho que estás en [facturación actual] y quieres llegar a [objetivo]. Por lo que me has contado, lo que te falta concretamente es [X]. Tengo claro qué te puede encajar de lo que hacemos.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="note">El closer conoce los 4 programas de memoria (1.500, 3.000, 5.000, 13.000 Premium). Según facturación y objetivo, encaja uno. La heurística básica: 0-2K → 1500 · 2-10K → 3000 · 5-20K → 5000 · 15K+ → 13K. Pitch tradicional de cada programa lo lleva el closer.</div>
+
+    <div class="case-label">Cierre con dos preguntas</div>
+    <div class="phrase-box" data-phrase>¿Te hace sentido esta manera de trabajar?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="phrase-box" data-phrase>¿Sientes que esto realmente te va a ayudar a llegar a [su objetivo]?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+
+    <div class="case-label">Activar bonus de acción rápida</div>
+    <div class="phrase-box" data-phrase>Y mira [Nombre], antes de cerrar te aviso: tenemos un bonus de acción rápida para los que arrancan en la misma videollamada. Son 2 meses extra de acceso al programa, gratis. Solo lo puedo activar ahora. Si lo dejamos para otro día, ya no aplica. Te lo digo para que sepas, no para presionarte.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+
+    <div class="case-label">Cierre directo</div>
+    <div class="phrase-box" data-phrase>¿Cómo lo hacemos, con tarjeta o transferencia?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+
+    <div class="note"><strong class="gold">SILENCIO.</strong> Quien hable primero, pierde. Si dice "déjame pensarlo" → Sección 04 · Objeción. Si dice "tengo que consultarlo con [X]" → Sección 05 · Cierre y Pago. Si paga, procesa en la videollamada y manda accesos por WhatsApp.</div>
+  </div>
+</div>
+
+  </div>
+</div><div class="section" data-search="objecion dejame probarlo capas agotar recursos ya probe no me convencio destapar real">
   <button class="section-header" onclick="toggleSection(this)">
     <span class="section-icon">⚠️</span>
     <div class="section-meta">
       <div class="section-title">04 · Objeción Principal</div>
-      <div class="section-subtitle">"Déjame probarlo"</div>
+      <div class="section-subtitle">"Déjame seguir probando" · 4 capas</div>
     </div>
     <span class="chevron">▼</span>
   </button>
   <div class="section-body">
-    <div class="info-box info-red"><strong style="color:#D67A7A">3 capas en orden.</strong> Si dice 3 veces que se lo lleva, PARAS y agendas 2ª llamada. No insistas en una cuarta.</div>
+    <div class="info-box info-red"><strong style="color:#D67A7A">Importante:</strong> el lead YA probó la Lite contigo en la demo. La objeción no es "déjame probarlo" puro, es "déjame seguir probando antes de decidir". Cambia el manejo. Si lo dice 3 veces, paras y agendas 2ª videollamada, no hay 4ª insistencia.</div>
+
 <div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">Capa 1 — Anclaje de autoridad</div><div class="subsection-subtitle">El recurso elegante</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>[Nombre], te voy honesto: tienes 5 preguntas al cerebro de Víctor y 10 guiones, son limitados. Si te lo llevas tú solo, la mayoría gasta los usos sin sacarle partido porque no sabe qué preguntar. Hagámoslas juntos aquí, que yo conozco la herramienta. Metemos preguntas tuyas ahora, ves cómo funciona de verdad, y ya decides. ¿Te parece?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Si acepta, metes 1-2 preguntas más, sale el factor wow, y vuelves al cierre.</div></div>
-    </div>
+  <button class="subsection-header" onclick="toggleSub(this)">
+    <div><div class="subsection-title">Capa 1 · "Déjame agotar los 10 guiones y 5 consultas, luego decido"</div><div class="subsection-subtitle">Anclaje a lo que ya vio</div></div>
+    <span class="chevron">▼</span>
+  </button>
+  <div class="subsection-body">
+    <div class="phrase-box" data-phrase>[Nombre], te entiendo y te voy honesto. La Lite es 1 de 10, ya te lo dije. Da igual los guiones que generes ahora, la herramienta completa que cambia el juego no está ahí. Tú lo que estás viendo es la punta del iceberg. Lo que decide si esto te ayuda o no a llegar a [su objetivo declarado] no es agotar 10 guiones más, es entrar en el sistema completo. ¿Qué te pasa de verdad, es el dinero?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="note">Si acepta que es dinero, vas a Cierre (sección 06, escenario dinero). Si dice que no, sigue insistiendo en probar más, pasas a Capa 2.</div>
+  </div>
+</div>
+
 <div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">Capa 2 — Si insiste</div><div class="subsection-subtitle">Honestidad radical</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>Vale. Mira, te paro un segundo. Para ahorrarnos tiempo los dos, dime qué te frena exactamente, así sé si esto te encaja o no. Normalmente es una de tres: el dinero, que necesitas verlo más en detalle, o que no es el momento. ¿Cuál es la tuya?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Aquí destapas la objeción real bajo el "déjame probarlo". Casi siempre es dinero o duda. Trabajas ESA, no la superficial.</div></div>
-    </div>
+  <button class="subsection-header" onclick="toggleSub(this)">
+    <div><div class="subsection-title">Capa 2 · "Ya he probado y no me ha convencido del todo"</div><div class="subsection-subtitle">Reframe del valor real</div></div>
+    <span class="chevron">▼</span>
+  </button>
+  <div class="subsection-body">
+    <div class="phrase-box" data-phrase>Vale, lo entiendo. Pero piensa una cosa: la Lite está diseñada precisamente para que veas el principio, no el final. Es una versión recortada al 10%. Sin la metodología completa de Víctor, sin el plan personalizado, sin las funciones premium, sin las mentorías, es como pretender hacerse experto en algo viendo un vídeo en YouTube. La pregunta que te hago es: ¿qué fue lo que no te convenció exactamente? Cuéntame, así lo aclaro.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="note">Aquí escuchas atento. La respuesta te da munición. Si dijo "no me gustó el guión que sacó", el problema no es la herramienta, es lo que le pidió. Si dijo "no veo cómo me ayuda", es que la demo no fue suficiente, ahí no había venta posible. Si dijo "lo veo lento", entra el frame de plan personalizado del 5K.</div>
+  </div>
+</div>
+
 <div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">Capa 3 — Cebo de segunda llamada</div><div class="subsection-subtitle">Si no abre con las dos primeras</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>Vale, te respeto. Hagamos esto: mañana a las [X] nos juntamos otra vez. Para entonces tendrás probado lo que vimos, y yo te traigo otra cosa más que te quiero enseñar. ¿Te cuadra a las [X] o mejor a las [Y]?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Agenda concreta. Cebo del "otra cosa más" mantiene loop.</div></div>
-    </div>
+  <button class="subsection-header" onclick="toggleSub(this)">
+    <div><div class="subsection-title">Capa 3 · Destapar objeción real</div><div class="subsection-subtitle">Honestidad radical</div></div>
+    <span class="chevron">▼</span>
+  </button>
+  <div class="subsection-body">
+    <div class="phrase-box" data-phrase>Vale, te paro un segundo. Para ahorrarnos tiempo los dos, dime qué te frena exactamente, así sé si esto te encaja o no. Normalmente es una de tres: el dinero, que necesitas verlo más en detalle, o que no es el momento. ¿Cuál es la tuya?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="note">Aquí destapas la objeción real bajo el "déjame seguir probando". Casi siempre es dinero o duda. Trabajas ESA, no la superficial. <strong class="gold">Si es dinero</strong>, baja un tier (de 5K a 3K, de 3K a 1.5K), pero ojo, no bajes si dijo que factura 15K en el setup, sería incoherente. <strong>Si es momento</strong>, recuerda el bonus de acción rápida y el "fuera de programa no hay IA".</div>
+  </div>
+</div>
+
+<div class="subsection">
+  <button class="subsection-header" onclick="toggleSub(this)">
+    <div><div class="subsection-title">Capa 4 · Cebo de segunda videollamada</div><div class="subsection-subtitle">Solo si no abre con las anteriores</div></div>
+    <span class="chevron">▼</span>
+  </button>
+  <div class="subsection-body">
+    <div class="phrase-box" data-phrase>Vale, te respeto. Hagamos esto: mañana a las [X] nos juntamos otra vez 15 min por Meet. Para entonces habrás gastado un par de guiones más y vendrás con dudas concretas, y yo te traigo otra cosa que te quiero enseñar antes de que decidas. ¿Te cuadra a las [X] o mejor a las [Y]?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="note">Agenda concreta, 2 huecos. <strong class="gold">PIERDE EL BONUS</strong> de acción rápida (se lo avisas claro: "ojo que el bonus de los 2 meses extra solo iba si cerrabas hoy"). Eso a veces lo hace cerrar en el momento. Si no, agendas segunda y la trabajas en frío.</div>
+  </div>
+</div>
+
   </div>
 </div><div class="section" data-search="cierre pago dinero pareja escenarios">
   <button class="section-header" onclick="toggleSection(this)">
@@ -572,174 +651,114 @@ Y otra cosa, si ya hablaste en su día, ¿qué más tienes que pensar? Imagino q
   <div style="line-height:1.7;margin-top:0.75rem;"><strong style="color:#D67A7A">SI NO CIERRA + 2ª LLAMADA:</strong><br>Solo se mantiene la guía como excepción. Los 2 meses extra se pierden — "es tu última oportunidad".</div>
 </div>
   </div>
-</div><div class="section" data-search="post cierre onboarding emocional reforzar">
-  <button class="section-header" onclick="toggleSection(this)">
-    <span class="section-icon">✓</span>
-    <div class="section-meta">
-      <div class="section-title">06 · Post-Cierre</div>
-      <div class="section-subtitle">Onboarding emocional</div>
-    </div>
-    <span class="chevron">▼</span>
-  </button>
-  <div class="section-body">
-    <p class="soft" style="font-size:0.85rem;line-height:1.6;">Cuando dice sí y procesas el pago, <span class="gold">NO has terminado</span>. Hay que eliminar el buyer's remorse antes de que aparezca.</p>
-<div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">a) Reforzar decisión</div><div class="subsection-subtitle">En la misma llamada</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>Has tomado una buena decisión. Lo que viste hoy es solo el inicio.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
-    </div>
-<div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">b) Traspaso cálido</div><div class="subsection-subtitle">Siguiente paso operativo</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>Ahora te mando por WhatsApp el acceso, los pasos para arrancar mañana y mi contacto directo. Cualquier cosa, me escribes.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
-    </div>
-<div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">c) Eliminar último temor</div><div class="subsection-subtitle">Anti-buyer's remorse</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>Mucha gente en este punto siente la duda '¿habré hecho bien?'. Es normal. Dentro de 30 días me vas a decir 'menos mal que cerré ese día'.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
-    </div>
-<div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">En las 24h siguientes</div><div class="subsection-subtitle">Mensaje de seguimiento</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>¿Cómo lo llevas? ¿Pudiste entrar al panel?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Mandar también: accesos + pasos + contacto directo del closer.</div></div>
-    </div>
-  </div>
-</div><div class="section" data-search="prompts ia ejemplos preguntas victor">
+</div><div class="section" data-search="prompts ia ejemplos preguntas victor cortos simples contexto setup">
   <button class="section-header" onclick="toggleSection(this)">
     <span class="section-icon">💡</span>
     <div class="section-meta">
-      <div class="section-title">07 · Prompts para la IA</div>
-      <div class="section-subtitle">Plantilla universal + 7 ejemplos por caso</div>
+      <div class="section-title">06 · Prompts para la IA</div>
+      <div class="section-subtitle">Cortos · La IA ya conoce su contexto del setup</div>
     </div>
     <span class="chevron">▼</span>
   </button>
   <div class="section-body">
-    <div class="info-box info-gold"><strong class="gold">Cómo se usa:</strong> el closer ayuda al lead a construir la pregunta CON la fórmula. No es script para leer. Es estructura para que la pregunta sea valiosa y no genérica.</div>
+    <div class="info-box info-gold"><strong class="gold">Principio:</strong> en el setup le has pedido nicho, facturación actual, objetivo, ads y objetivo de cuenta. <strong>La IA ya tiene esa info</strong>. Los prompts del lead deben asumir ese contexto y preguntar lo concreto, sin repetir datos. Cuanto más corto y específico, mejor sale la respuesta.</div>
+
 <div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">Plantilla maestra</div><div class="subsection-subtitle">5 ingredientes · adaptar a cada lead</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>Tengo un negocio de [QUÉ VENDE]. Facturo [X €] al mes y llevo [TIEMPO] con esto. Mi objetivo a corto plazo es [OBJETIVO MEDIBLE].
-
-Ahora mismo el cuello de botella es [PROBLEMA CONCRETO]. He intentado [ACCIÓN 1] y [ACCIÓN 2], pero [RESULTADO REAL].
-
-Mi hipótesis es que [POR QUÉ CREO QUE PASA].
-
-¿Qué harías tú concretamente en mi situación para [RESULTADO DESEADO] en los próximos 60-90 días? Dame pasos accionables semana a semana.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
-    </div>
-<div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">Ejemplo · Problema de CAPTACIÓN</div><div class="subsection-subtitle">Lead que no consigue leads cualificados</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>Tengo una agencia de marketing para ecommerce. Facturo 12k€/mes con 6 clientes y llevo 2 años. Mi objetivo es llegar a 25k€ este trimestre.
-
-El cuello de botella es que no consigo captar clientes nuevos sin depender de referidos. He probado contenido en LinkedIn y outreach por email, pero solo me llegan leads con presupuestos de 300€/mes que no me cuadran.
-
-Mi hipótesis es que mi posicionamiento es demasiado genérico y por eso atraigo cualquiera.
-
-¿Qué harías concretamente para captar 2-3 clientes de 2-3k€/mes en los próximos 60 días? Pasos accionables semana a semana.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
-    </div>
-<div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">Ejemplo · Problema de CIERRE</div><div class="subsection-subtitle">Lead que tiene tráfico pero no vende</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>Soy coach de productividad para profesionales. Facturo 5k€/mes con sesiones a 150€ y llevo 18 meses. Mi objetivo es llegar a 12k€/mes.
-
-El cuello de botella es que tengo conversaciones pero no consigo cerrar el ticket alto. Me piden info y desaparecen, o me dicen 'déjame pensarlo' y nunca vuelven.
-
-Mi hipótesis es que no estoy generando suficiente diferencia entre lo que ofrezco yo y lo que hay gratis en internet.
-
-¿Qué harías para cerrar 3-4 clientes de 1.500€ al mes en los próximos 60 días? Pasos accionables semana a semana.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
-    </div>
-<div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">Ejemplo · Problema de CONTENIDO</div><div class="subsection-subtitle">Lead que sube contenido y no genera engagement</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>Soy nutricionista especializada en mujeres post-parto. Facturo 4k€/mes con planes 1:1 a 200€ y llevo 3 años. Mi objetivo es llegar a 10k€/mes con un programa grupal.
-
-El cuello de botella es que llevo subiendo contenido a Instagram desde hace 8 meses y no consigo que pase de 200 likes ni que la gente me escriba a DMs preguntando por mis servicios.
-
-Mi hipótesis es que mi contenido es demasiado informativo (consejos sueltos) y no conecta emocionalmente con el dolor real de mi audiencia.
-
-¿Qué harías concretamente para subir el alcance y empezar a recibir 5-10 DMs cualificados al mes? Pasos accionables semana a semana.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
-    </div>
-<div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">Ejemplo · Problema de ESCALA</div><div class="subsection-subtitle">Lead que está al límite de horas</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>Soy psicólogo especializado en parejas. Facturo 7k€/mes con sesiones a 90€ y llevo 6 años. Mi objetivo es llegar a 15k€/mes sin meter más horas.
-
-El cuello de botella es que estoy al límite de horas que puedo dar 1:1 y físicamente no puedo más. He pensado en subir precios pero tengo miedo de perder clientes, y en lanzar un curso pero no sé por dónde empezar.
-
-Mi hipótesis es que mi modelo de negocio actual tiene un techo natural en mi tiempo y necesito un producto que escale sin requerir mi presencia constante.
-
-¿Qué harías para construir un producto grupal o digital que añada 8k€/mes en los próximos 90 días sin tirar el 1:1 que ya tengo? Pasos accionables.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
-    </div>
-<div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">Ejemplo · Problema de POSICIONAMIENTO</div><div class="subsection-subtitle">Lead que compite por precio</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>Soy agente inmobiliario en Madrid centro. Cierro 6 operaciones al año a comisión media de 5k€. Llevo 4 años y facturo 30k€ anuales.
-
-El cuello de botella es que compito con 200 agentes igual que yo y los clientes eligen por precio o por contacto, no por algo que yo aporte como diferencial. Mi marca personal online es prácticamente invisible.
-
-Mi hipótesis es que necesito construir autoridad online concreta en mi zona y un mecanismo claro que me diferencie del agente típico.
-
-¿Qué harías para posicionarme como el agente de referencia en mi zona en los próximos 6 meses y duplicar operaciones? Pasos accionables mes a mes.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
-    </div>
-<div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">Ejemplo · Pregunta de SEGUIMIENTO</div><div class="subsection-subtitle">Cuando ya respondió y quieres profundizar</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>Sobre la respuesta anterior: el paso de [PASO ESPECÍFICO MENCIONADO] no me termina de cuadrar en mi caso porque [SITUACIÓN ESPECÍFICA].
-
-¿Cómo lo aplicarías exactamente teniendo en cuenta [DETALLE]? Dame ejemplos concretos de cómo lo haría yo desde mañana mismo.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div><div class="note">Útil cuando el lead quiere profundizar en algún punto específico. Gasta una pregunta pero le da máximo valor.</div></div>
-    </div>
-<div class="subsection">
-      <button class="subsection-header" onclick="toggleSub(this)">
-        <div><div class="subsection-title">Prompt para GUIONES</div><div class="subsection-subtitle">Cuando piden contenido específico (Reel, vídeo, post)</div></div>
-        <span class="chevron">▼</span>
-      </button>
-      <div class="subsection-body"><div class="phrase-box" data-phrase>Necesito un guion para [TIPO: Reel/vídeo YouTube/post LinkedIn] dirigido a [AUDIENCIA: perfil, edad, situación].
-
-El objetivo es [GENERAR LEADS / POSICIONARME / VENDER X].
-
-El ángulo es [TEMA + PERSPECTIVA ESPECÍFICA, NO GENÉRICA — ej: 'por qué la mayoría no consigue resultados con [X] y qué hacer diferente'].
-
-El gancho debe ser fuerte porque mi audiencia está saturada de contenido genérico.
-
-Dame el guion completo con: hook (primeros 3 segundos), cuerpo con estructura clara, y CTA. Que suene natural y humano, no a contenido de gurú. Lenguaje directo, sin clichés tipo 'te voy a cambiar la vida'.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div></div>
-    </div>
-<div class="info-box info-red" style="margin-top:1.5rem;">
-  <strong style="color:#D67A7A;">Lo que NUNCA preguntar:</strong><br><br>
-  ❌ "¿Qué tipo de contenido funciona en mi nicho?" → genérico<br>
-  ❌ "¿Cómo puedo vender más?" → sin contexto<br>
-  ❌ "Dame ideas de marketing para mi negocio." → sin objetivo<br>
-  ❌ "¿Qué consejos me das?" → pregunta de pordiosero<br>
-  ❌ "¿Cuál es la mejor estrategia para X?" → ahistórica<br><br>
-  Si la pregunta del lead no incluye al menos 3 de los 5 ingredientes (perfil, objetivo, situación, intento, hipótesis), <strong>el closer pausa y la reconstruye con la fórmula</strong> antes de meterla.
+  <button class="subsection-header" onclick="toggleSub(this)">
+    <div><div class="subsection-title">Ideas de contenido</div><div class="subsection-subtitle">Para sacar temas que peguen con su nicho</div></div>
+    <span class="chevron">▼</span>
+  </button>
+  <div class="subsection-body">
+    <div class="phrase-box" data-phrase>Dame 5 ideas virales de contenido para esta semana.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="phrase-box" data-phrase>¿Qué temas están funcionando ahora mismo en mi nicho? Dame 10 con potencial viral.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="phrase-box" data-phrase>Dame 5 hooks ganadores para los primeros 3 segundos de un Reel en mi nicho.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="phrase-box" data-phrase>¿Qué dolores tiene mi avatar y cómo los toco en contenido sin sonar a venta?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+  </div>
 </div>
+
+<div class="subsection">
+  <button class="subsection-header" onclick="toggleSub(this)">
+    <div><div class="subsection-title">Generar guiones</div><div class="subsection-subtitle">De idea a guión listo para grabar</div></div>
+    <span class="chevron">▼</span>
+  </button>
+  <div class="subsection-body">
+    <div class="phrase-box" data-phrase>Hazme un guión sobre [tema concreto].<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="phrase-box" data-phrase>Guión de 30 segundos sobre [tema] con gancho, contexto, solución y CTA.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="phrase-box" data-phrase>Hazme una variación más polémica de este guión: [pegar el guión].<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="note">El "[tema concreto]" lo trae el lead. La IA ya sabe su nicho, no hace falta decirlo cada vez.</div>
+  </div>
+</div>
+
+<div class="subsection">
+  <button class="subsection-header" onclick="toggleSub(this)">
+    <div><div class="subsection-title">Plan y calendario</div><div class="subsection-subtitle">Estructura de contenido</div></div>
+    <span class="chevron">▼</span>
+  </button>
+  <div class="subsection-body">
+    <div class="phrase-box" data-phrase>Calendario de contenido de 30 días alineado a mi objetivo.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="phrase-box" data-phrase>Plan semanal de contenido: cuántos vídeos, qué formatos y qué temas para esta semana.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="phrase-box" data-phrase>¿Cómo paso de mi facturación actual a mi objetivo aplicando solo orgánico?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+  </div>
+</div>
+
+<div class="subsection">
+  <button class="subsection-header" onclick="toggleSub(this)">
+    <div><div class="subsection-title">Analizar competencia y referencias</div><div class="subsection-subtitle">Sacar partido de lo que ya funciona</div></div>
+    <span class="chevron">▼</span>
+  </button>
+  <div class="subsection-body">
+    <div class="phrase-box" data-phrase>Analiza [URL del competidor] y dime qué replicar de su estrategia adaptado a mí.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="phrase-box" data-phrase>Dame 5 cuentas internacionales referentes en mi nicho y qué hace cada una bien.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="phrase-box" data-phrase>¿Qué patrón virales tienen estos 3 vídeos? [Pegar 3 URLs]<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+  </div>
+</div>
+
+<div class="subsection">
+  <button class="subsection-header" onclick="toggleSub(this)">
+    <div><div class="subsection-title">Diagnóstico y errores</div><div class="subsection-subtitle">Qué le está frenando</div></div>
+    <span class="chevron">▼</span>
+  </button>
+  <div class="subsection-body">
+    <div class="phrase-box" data-phrase>¿Qué errores típicos cometo en mi nicho que me están frenando?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="phrase-box" data-phrase>Si todo sigue igual, ¿qué tendría que cambiar para llegar a mi objetivo en 6 meses?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="phrase-box" data-phrase>¿Qué objeciones tiene mi avatar y cómo las rompo desde el contenido?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+  </div>
+</div>
+
+<div class="subsection">
+  <button class="subsection-header" onclick="toggleSub(this)">
+    <div><div class="subsection-title">Monetización</div><div class="subsection-subtitle">Convertir visibilidad en ventas</div></div>
+    <span class="chevron">▼</span>
+  </button>
+  <div class="subsection-body">
+    <div class="phrase-box" data-phrase>¿Cómo monetizo lo que estoy creando con mi audiencia actual?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="phrase-box" data-phrase>Dame una estrategia de embudo desde el contenido orgánico hasta el cierre.<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+    <div class="phrase-box" data-phrase>¿Qué CTA pongo en mis vídeos para que me lleguen DMs cualificados?<button class="copy-btn" onclick="copyPhrase(this)">📋 Copiar</button></div>
+  </div>
+</div>
+
+<div class="subsection">
+  <button class="subsection-header" onclick="toggleSub(this)">
+    <div><div class="subsection-title">Cuándo añadir contexto extra</div><div class="subsection-subtitle">Casos donde sí toca dar más detalle</div></div>
+    <span class="chevron">▼</span>
+  </button>
+  <div class="subsection-body">
+    <div class="info-box info-blue" style="font-size:0.82rem;line-height:1.7;">
+      La IA ya sabe nicho, facturación, objetivo, ads y objetivo de cuenta. <strong>No repitas eso.</strong> Solo añade contexto extra cuando:<br><br>
+      · El tema sale de un sub-nicho específico ("hago coaching pero solo para mujeres post-parto")<br>
+      · Hay una restricción de tiempo o presupuesto puntual ("este mes solo puedo grabar los fines de semana")<br>
+      · El lead quiere algo muy concreto que no se deduce ("quiero atacar al avatar X que es distinto al mío típico")<br>
+      · Estás analizando un caso ajeno ("analiza esto que hizo mi competidor")
+    </div>
+  </div>
+</div>
+
   </div>
 </div><div class="section" data-search="guias nicho marketing dinero desarrollo negocios make money estructuras virales pdf descarga">
   <button class="section-header" onclick="toggleSection(this)">
     <span class="section-icon">📚</span>
     <div class="section-meta">
-      <div class="section-title">08 · Guías por Nicho</div>
+      <div class="section-title">07 · Guías por Nicho</div>
       <div class="section-subtitle">10 estructuras virales · 4 nichos · PDF</div>
     </div>
     <span class="chevron">▼</span>
